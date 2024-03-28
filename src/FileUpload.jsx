@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./App.css";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
@@ -31,9 +32,12 @@ const FileUpload = () => {
   };
 
   return (
-    <div>
-      <input type="file" onChange={onFileChange} />
-      <button onClick={onFileUpload}>Upload</button>
+    <div className="flex flex-col justify-start items-start">
+      <input type="file" onChange={onFileChange} className=""/>
+      <button onClick={onFileUpload} className="py-4 px-20 border-2  mt-10 rounded-lg mb-10">
+        Upload
+      </button>
+
       <p>{review}</p>
     </div>
   );
