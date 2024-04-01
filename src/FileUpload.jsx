@@ -32,9 +32,18 @@ const FileUpload = () => {
   };
 
   return (
-    <div className="flex flex-col justify-start items-start">
-      <input type="file" onChange={onFileChange} className=""/>
-      <button onClick={onFileUpload} className="py-4 px-20 border-2  mt-10 rounded-lg mb-10">
+    <div className="flex flex-col justify-start items-start text-white bg-[#10061f] h-svh p-10 w-full">
+      <p className="text-8xl font-archivoBlack text-[#fbf5ec] text-start font-extrabold tracking-wide pt-20">
+        Chapter One
+      </p>
+      <p className="mb-10 text-start ml-2 mt-10 text-2xl font-medium italic">
+        Start the next chapter of your career with the power of AI
+      </p>
+      <input type="file" onChange={onFileChange} className="" />
+      <button
+        onClick={onFileUpload}
+        className="py-4 px-20 border-2  mt-10 rounded-lg mb-10"
+      >
         Upload
       </button>
 
