@@ -4,13 +4,13 @@ function Home() {
   return (
     <div className="z-[100] font-sora text-black">
       <div className=" bg-chapterOneLightBlue flex-col flex items-center pt-20">
-        <div className=" flex-col flex justify-center max-w-[336px]">
-          <div className=" text-5xl leading-[58px] font-extrabold  pt-10">
+        <div className=" flex-col flex justify-center max-w-[336px] lg:max-w-[816px] lg:w-[100%]">
+          <div className=" text-5xl leading-[58px] font-extrabold pt-10 lg:text-[64px] lg:leading-[76px] lg:pt-28">
             <p>Hone Your Resume.</p>
             <p>Get The Job.</p>
             <p>Secure Your Future.</p>
           </div>
-          <div className="mt-10 font-sora leading-[19.2px]">
+          <div className="mt-10 font-sora leading-[19.2px] lg:text-lg lg:leading-6 lg:max-w-[640px]">
             <p>
               We provide{" "}
               <span className="font-semibold">
@@ -19,12 +19,17 @@ function Home() {
               that will help you with job application success and standout
               proficiency.
             </p>
-            <p className="pt-5 text-sm">Powered by AI.</p>
+            <p className="pt-5 text-sm lg:text-base">Powered by AI.</p>
           </div>
-          <button class="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-center rounded-[10px] bg-chapterOneBlue">
+          <button class="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-center rounded-[10px] bg-chapterOneBlue lg:self-start">
             Login or Signup
           </button>
         </div>
+        <img
+          src="src\assets\hero-image.svg"
+          alt=""
+          className="absolute hidden"
+        />
       </div>
       <div className="flex-col mb-20 flex justify-center items-center relative">
         <p className="text-[32px] font-extrabold pt-28 max-w-[336px]">
