@@ -12,6 +12,7 @@ export default {
         chapterOneLightBlue: "#F0EEFB",
         chapterOneBlue: "#605DFC",
       },
+
     },
   },
   plugins: [],
