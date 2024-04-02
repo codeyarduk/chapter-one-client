@@ -8,7 +8,7 @@ function Home() {
           Chapter One AI
         </h1>
         <p className="mt-5">
-            Start the next chapter of your career with the power of AI
+          Start the next chapter of your career with the power of AI
         </p>
       </div>
       <div>
@@ -18,7 +18,7 @@ function Home() {
       </div>
       <div className="h-96 bg-black flex justify-center items-center">
         <h1 className="text-white text-4xl font-bold font-archivoBlack">
-            Tailor your resume for each different job that you apply for
+          Tailor your resume for each different job that you apply for
         </h1>
       </div>
       <div>

@@ -6,6 +6,10 @@ export default {
     extend: {
       fontFamily: {
         archivoBlack: ["Archivo Black", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
+      },
+      colors: {
+        chapterOneLightBlue: "#F0EEFB",
       },
     },
   },
