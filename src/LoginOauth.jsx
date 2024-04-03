@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import Footer from "./Footer";
 
 import React from "react";
+// import Nav from "./Nav";
 
 function LoginOauth() {
   const [user, setUser] = useState({});
@@ -70,7 +71,8 @@ function LoginOauth() {
 
   return (
     <>
-      <div className="pt-20 w-full flex justify-center flex-col items-center h-[410px] ">
+      {/* <Nav /> */}
+      <div className=" w-full flex justify-center flex-col items-center h-[410px] py-80">
         <p>Login</p>
         <p>Login to your exiting Chapter One account</p>
         <div id="signInDiv" className=""></div>

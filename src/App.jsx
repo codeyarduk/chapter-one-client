@@ -11,7 +11,7 @@ import Packages from "./Packages";
 function App() {
   return (
     <>
-      {/* <Nav /> */}
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/upload" element={<FileUpload />} />

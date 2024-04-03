@@ -5,8 +5,6 @@ import Nav from "./Nav";
 function Home() {
   return (
     <div className=" font-sora text-black">
-      {/* NAV BAR */}
-      <Nav />
       {/* HERO SECTION */}
       <div className=" bg-chapterOneLightBlue flex-col flex items-center pt-20 justify-center">
         <div className="overflow-hidden relative w-full flex flex-col items-center lg:items-center">
