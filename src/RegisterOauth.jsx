@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 
 import React from "react";
 
-function LoginOauth() {
+function RegisterOauth() {
   const [user, setUser] = useState({});
   const [outcome, setOutCome] = useState("");
 
@@ -29,7 +29,7 @@ function LoginOauth() {
   }
 
   const sendEmail = (userObject) => {
-    fetch("http://localhost:3000/api/users/login", {
+    fetch("http://localhost:3000/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,21 +57,17 @@ function LoginOauth() {
       client_id:
         "886756526696-8pc6lu70409d3uu0jvfkojk02kjoak7t.apps.googleusercontent.com",
       callback: handleCallback,
-    //   prompt: "select_account",
     });
 
     google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      theme: "filled_white",
+      theme: "outline",
       size: "large",
-      prompt_parent_id: "signInDiv",
     });
   }, []);
 
   return (
-    <div className="pt-20 w-full flex justify-center flex-col items-center">
-      <h2>Login</h2>
-      <div id="signInDiv" className=""></div>
-      <p>We would love to you join the Chapter One team!</p>
+    <div className="pt-20">
+      <div id="signInDiv"></div>
       {user && (
         <div>
           {/* <img src={user.picture}></img> */}
@@ -84,4 +80,4 @@ function LoginOauth() {
   );
 }
 
-export default LoginOauth;
+export default RegisterOauth;
