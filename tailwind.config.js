@@ -13,7 +13,9 @@ export default {
         chapterOneBlue: "#605DFC",
         chapterOneDarkBlue: "#141359",
       },
-
+      fontSize: {
+        "5xl": "2.5rem",
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 // { email, name, uses }
 function Profile() {
@@ -9,7 +10,9 @@ function Profile() {
   const firstName = location.state?.firstName;
   const lastName = location.state?.lastName;
   const uses = location.state?.uses;
+  const credential = Cookies.get("credential");
 
+  console.log("THIS IS: " + credential);
   useEffect(() => {
     if (!email) {
       navigate("/login");
