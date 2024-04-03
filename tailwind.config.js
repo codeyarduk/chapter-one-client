@@ -11,6 +11,7 @@ export default {
       colors: {
         chapterOneLightBlue: "#F0EEFB",
         chapterOneBlue: "#605DFC",
+        chapterOneDarkBlue: "#141359",
       },
     },
   },

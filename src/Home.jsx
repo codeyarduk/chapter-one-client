@@ -2,95 +2,133 @@ import React from "react";
 
 function Home() {
   return (
-    <div className="z-[100] font-sora text-black">
-      <div className=" bg-chapterOneLightBlue flex-col flex items-center pt-20">
-        <div className=" flex-col flex justify-center max-w-[336px] lg:max-w-[816px] lg:w-[100%]">
-          <div className=" text-5xl leading-[58px] font-extrabold pt-10 lg:text-[64px] lg:leading-[76px] lg:pt-28">
-            <p>Hone Your Resume.</p>
-            <p>Get The Job.</p>
-            <p>Secure Your Future.</p>
+    <div className=" font-sora text-black">
+      <div className=" bg-chapterOneLightBlue flex-col flex items-center pt-20 justify-center">
+        <div className="overflow-hidden relative w-full flex flex-col items-center lg:items-center">
+          <div className=" flex-col flex justify-center pl-5 max-w-[377px] lg:max-w-[816px] lg:w-[100%]">
+            <div className=" text-5xl leading-[58px] font-extrabold pt-10 lg:text-[64px] lg:leading-[76px] lg:pt-[108px]">
+              <p>Hone Your Resume.</p>
+              <p>Get The Job.</p>
+              <p>Secure Your Future.</p>
+            </div>
+            <div className="mt-10 font-sora leading-[19.2px] max-w-[300px] lg:text-lg lg:leading-6 lg:max-w-[640px]">
+              <p>
+                We provide{" "}
+                <span className="font-semibold">
+                  Implementable Expert Resume Reviews
+                </span>{" "}
+                that will help you with job application success and standout
+                proficiency.
+              </p>
+              <p className="pt-5 text-sm lg:text-base">Powered by AI.</p>
+            </div>
+            <button class="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px]">
+              Login or Signup
+            </button>
+            <img
+              src="src\assets\hero-image.svg"
+              alt=""
+              className="absolute top-1/2 left-[60%] transform translate-x-[230px] translate-y-[-230px] hidden lg:block z-[10] "
+            />
           </div>
-          <div className="mt-10 font-sora leading-[19.2px] lg:text-lg lg:leading-6 lg:max-w-[640px]">
-            <p>
-              We provide{" "}
-              <span className="font-semibold">
-                Implementable Expert Resume Reviews
-              </span>{" "}
-              that will help you with job application success and standout
-              proficiency.
-            </p>
-            <p className="pt-5 text-sm lg:text-base">Powered by AI.</p>
-          </div>
-          <button class="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-center rounded-[10px] bg-chapterOneBlue lg:self-start">
-            Login or Signup
-          </button>
         </div>
-        <img
-          src="src\assets\hero-image.svg"
-          alt=""
-          className="absolute hidden"
-        />
       </div>
-      <div className="flex-col mb-20 flex justify-center items-center relative">
-        <p className="text-[32px] font-extrabold pt-28 max-w-[336px]">
+      <div className="flex-col mb-20 flex justify-center items-center relative bg-white z-[20]">
+        <p className="text-[32px] font-extrabold pt-28 max-w-[336px] lg:text-[40px]">
           How it works
         </p>
-        <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4">
+        <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[600px]">
           Watch our video to understand the process of how we work
         </p>
         <img
           src="src\assets\temp_video.png"
           alt=""
-          className="w-[336px] rounded-lg"
+          className="w-[336px] rounded-lg lg:w-[820px]"
         />
-        <a href="" className="text-chapterOneBlue text-sm font-semibold mt-6">
+        <a
+          href=""
+          className="text-chapterOneBlue text-sm font-semibold mt-6 lg:hidden"
+        >
           Login or Signup
         </a>
-        <div className=" bg-chapterOneLightBlue absolute h-52 top-[356px] w-[100%] -z-10"></div>
+        <button class=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block">
+          Login or Signup
+        </button>
+        <div className=" bg-chapterOneLightBlue absolute h-52 top-[356px] w-[100%] -z-10 lg:h-[545px]"></div>
       </div>
 
       {/* OUR PACKAGES SECTION */}
-      <div className="flex-col mb-20 flex justify-center items-center relative">
-        <p className="text-[32px] font-extrabold pt-24 max-w-[336px]">
+      <div className="flex-col mb-20 flex justify-center items-center relative ">
+        <p className="text-[32px] font-extrabold pt-24 max-w-[336px] lg:text-[40px]">
           Our packages
         </p>
-        <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4">
+        <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[800px]">
           Check out the range of custom packages we offer to see which suits
           your needs best!
         </p>
+        <div className="flex flex-col lg:flex-row">
+          {/* Basic Package */}
+          <div className="mx-2 w-[336px] h-[400px] bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px]">
+            <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20">
+              Basic
+            </p>
+            <p className="font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14">
+              £49
+            </p>
+            <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
+              Receive up to 5 comprehensive resume reviews and analyses.
+            </p>
+            <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue lg:text-base lg:w-[338px] lg:mt-10">
+              Buy now
+            </button>
+          </div>
 
-        {/* Basic Package */}
-        <div className="w-[336px] h-[400px] bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneBlue rounded-xl mt-4">
-          <p className="font-bold text-xl mt-16">Basic</p>
-          <p className="font-extrabold text-5xl mt-10">£49</p>
-          <p className="font-normal text-sm max-w-72 mt-10">
-            Receive up to 5 comprehensive resume reviews and analyses.
-          </p>
-          <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue">
-            Buy now
-          </button>
+          {/* Standard Package */}
+          <div className="mx-2 w-[336px] h-[400px] bg-chapterOneBlue flex flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden">
+            <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20">
+              Standard
+            </p>
+            <p className="font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14">
+              £99
+            </p>
+            <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
+              Receive up to 25 comprehensive resume reviews and analyses.
+            </p>
+            <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10">
+              Buy now
+            </button>
+          </div>
+
+          {/* Premium Package */}
+          <div className="mx-2 w-[336px] h-[400px] bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneBlue rounded-xl mt-4  lg:w-[400px] lg:h-[474px]">
+            <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20">
+              Premium
+            </p>
+            <p className="font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14">
+              £149
+            </p>
+            <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
+              Receive up to 100 comprehensive resume reviews and analyses.
+            </p>
+            <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10">
+              Buy now
+            </button>
+          </div>
         </div>
-
-        {/* Standard Package */}
-        <div className="w-[336px] h-[400px] bg-chapterOneBlue flex flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-4">
-          <p className="font-bold text-xl mt-16">Standard</p>
-          <p className="font-extrabold text-5xl mt-10">£99</p>
-          <p className="font-normal text-sm max-w-72 mt-10">
-            Receive up to 25 comprehensive resume reviews and analyses.
+        {/* Standard Package (Tablet View Only) */}
+        <div className="mx-2 w-[336px] h-[400px] bg-chapterOneBlue flex flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-6 hidden lg:w-[400px] lg:h-[474px] lg:block">
+          <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20">
+            Standard
           </p>
-          <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue">
-            Buy now
-          </button>
-        </div>
-
-        {/* Premium Package */}
-        <div className="w-[336px] h-[400px] bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneBlue rounded-xl mt-4">
-          <p className="font-bold text-xl mt-16">Premium</p>
-          <p className="font-extrabold text-5xl mt-10">£149</p>
-          <p className="font-normal text-sm max-w-72 mt-10">
-            Receive up to 100 comprehensive resume reviews and analyses.
+          <p className="font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14">
+            £99
           </p>
-          <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue">
+          <div className=" flex justify-center">
+            <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
+              Receive up to 25 comprehensive resume reviews and analyses.
+            </p>
+          </div>
+          <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10">
             Buy now
           </button>
         </div>
@@ -104,7 +142,7 @@ function Home() {
           </p>
         </div>
       </div>
-      <div className=" bg-chapterOneBlue text-white flex-col flex items-center font-light pt-28">
+      <div className=" bg-chapterOneDarkBlue text-white flex-col flex items-center font-light pt-28">
         <div className="flex-col flex w-[300px]">
           <div className="flex flex-col">
             <p className="text-lg font-extrabold mb-3">Quick links</p>
