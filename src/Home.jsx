@@ -5,8 +5,8 @@ function Home() {
     <div className=" font-sora text-black">
       <div className=" bg-chapterOneLightBlue flex-col flex items-center pt-20 justify-center">
         <div className="overflow-hidden relative w-full flex flex-col items-center lg:items-center">
-          <div className=" flex-col flex justify-center pl-5 max-w-[377px] lg:max-w-[816px] lg:w-[100%]">
-            <div className=" text-5xl leading-[58px] font-extrabold pt-10 lg:text-[64px] lg:leading-[76px] lg:pt-[108px]">
+          <div className=" flex-col flex justify-center pl-5 max-w-[377px] lg:max-w-[816px] lg:w-[100%] xl:max-w-[1180px]">
+            <div className=" text-5xl leading-[58px] font-extrabold pt-10 lg:text-[64px] lg:leading-[76px] lg:pt-[108px] xl:text-[72px] xl:leading-[86px]">
               <p>Hone Your Resume.</p>
               <p>Get The Job.</p>
               <p>Secure Your Future.</p>
@@ -20,9 +20,11 @@ function Home() {
                 that will help you with job application success and standout
                 proficiency.
               </p>
-              <p className="pt-5 text-sm lg:text-base">Powered by AI.</p>
+              <p className="pt-5 text-sm lg:text-base xl:mb-36">
+                Powered by AI.
+              </p>
             </div>
-            <button class="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px]">
+            <button class="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden">
               Login or Signup
             </button>
             <img
@@ -49,10 +51,10 @@ function Home() {
           href=""
           className="text-chapterOneBlue text-sm font-semibold mt-6 lg:hidden"
         >
-          Login or Signup
+          View Packages
         </a>
-        <button class=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block">
-          Login or Signup
+        <button class=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block lg:w-[368px]">
+          View Packages
         </button>
         <div className=" bg-chapterOneLightBlue absolute h-52 top-[356px] w-[100%] -z-10 lg:h-[545px]"></div>
       </div>
@@ -134,7 +136,7 @@ function Home() {
         </div>
       </div>
       <div className=" bg-chapterOneLightBlue flex-col flex items-center py-20">
-        <div className=" flex-col flex justify-center max-w-[336px] text-2xl lg:max-w-[800px] lg:py-16">
+        <div className=" flex-col flex justify-center max-w-[336px] text-2xl lg:max-w-[800px] lg:py-16 xl:text-[32px] xl:max-w-[1100px]">
           <p>
             At Chapter <span className="text-chapterOneBlue">One</span> we
             prioritise your safety and privacy. Therefore all of your personal
