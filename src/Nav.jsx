@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div className="w-full font-sora flex flex-row justify-center items-center absolute py-6 lg:py-12">
+    <div className="w-full font-sora flex flex-row justify-center items-center absolute py-9 lg:py-12">
       <div className="w-full font-sora flex flex-row justify-between items-center absolute py-6 px-5 max-w-[377px] lg:max-w-[812px] xl:max-w-[1180px]">
         <div>
           <p className="font-extrabold text-xl text-chapterOneDarkBlue lg:text-2xl">

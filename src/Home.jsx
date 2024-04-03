@@ -11,7 +11,7 @@ function Home() {
               <p>Get The Job.</p>
               <p>Secure Your Future.</p>
             </div>
-            <div className="mt-10 font-sora leading-[19.2px] max-w-[300px] lg:text-lg lg:leading-6 lg:max-w-[640px]">
+            <div className="mt-10 font-sora leading-[19.2px] max-w-[336px] lg:text-lg lg:leading-6 lg:max-w-[640px]">
               <p>
                 We provide{" "}
                 <span className="font-semibold">
@@ -25,7 +25,7 @@ function Home() {
               </p>
             </div>
             <button class="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden">
-              Login or Signup
+              View Packages
             </button>
             <img
               src="src\assets\hero-image.svg"
