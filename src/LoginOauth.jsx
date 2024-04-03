@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { jwtDecode as jwt_decode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import Footer from "./Footer";
 
 import React from "react";
 
@@ -57,7 +58,7 @@ function LoginOauth() {
       client_id:
         "886756526696-8pc6lu70409d3uu0jvfkojk02kjoak7t.apps.googleusercontent.com",
       callback: handleCallback,
-    //   prompt: "select_account",
+      //   prompt: "select_account",
     });
 
     google.accounts.id.renderButton(document.getElementById("signInDiv"), {
@@ -68,19 +69,17 @@ function LoginOauth() {
   }, []);
 
   return (
-    <div className="pt-20 w-full flex justify-center flex-col items-center">
-      <h2>Login</h2>
-      <div id="signInDiv" className=""></div>
-      <p>We would love to you join the Chapter One team!</p>
-      {user && (
-        <div>
-          {/* <img src={user.picture}></img> */}
-          <h3>{outcome}</h3>
-
-          {/* <h4 >{user.email}</h4> */}
-        </div>
-      )}
-    </div>
+    <>
+      <div className="pt-20 w-full flex justify-center flex-col items-center h-[410px] ">
+        <p>Login</p>
+        <p>Login to your exiting Chapter One account</p>
+        <div id="signInDiv" className=""></div>
+        <p>
+          Don't have an account? <span className="underline">Sign up</span>
+        </p>
+      </div>
+      <Footer />
+    </>
   );
 }
 
