@@ -67,17 +67,22 @@ function RegisterOauth() {
   }, []);
 
   return (
-    <div className="pt-20">
-      <div id="signInDiv"></div>
-      {user && (
-        <div>
-          {/* <img src={user.picture}></img> */}
-          <h3>{outcome}</h3>
-
-          {/* <h4 >{user.email}</h4> */}
+    <>
+      <div className="font-sora w-full flex justify-center flex-col items-center">
+        <div className="flex justify-center flex-col items-center h-[500px] w-[560px] bg-chapterOneLightBlue rounded-2xl mt-[200px] mb-[120px] border-[1.6px] border-chapterOneBlue">
+          <p className="font-extrabold text-5xl">Sign up</p>
+          <p className="font-light mt-4 text-sm">
+            You're taking the first step in the right direction
+          </p>
+          <div id="signInDiv" className="my-12"></div>
+          <p className="font-light text-sm mb-5">
+            Have an account?{" "}
+            <span className="underline text-chapterOneBlue">Login</span>
+          </p>
         </div>
-      )}
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 
