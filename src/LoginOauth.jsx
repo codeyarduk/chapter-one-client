@@ -71,14 +71,18 @@ function LoginOauth() {
 
   return (
     <>
-      {/* <Nav /> */}
-      <div className=" w-full flex justify-center flex-col items-center h-[410px] py-80">
-        <p>Login</p>
-        <p>Login to your exiting Chapter One account</p>
-        <div id="signInDiv" className=""></div>
-        <p>
-          Don't have an account? <span className="underline">Sign up</span>
-        </p>
+      <div className="font-sora w-full flex justify-center flex-col items-center">
+        <div className="flex justify-center flex-col items-center h-[500px] w-[560px] bg-chapterOneLightBlue rounded-2xl mt-[200px] mb-[120px]">
+          <p className="font-extrabold text-5xl">Login</p>
+          <p className="font-light mt-4 text-sm">
+            Login to your existing Chapter One account
+          </p>
+          <div id="signInDiv" className="my-12"></div>
+          <p className="font-light text-sm mb-5">
+            Don't have an account?{" "}
+            <span className="underline text-chapterOneBlue">Sign up</span>
+          </p>
+        </div>
       </div>
       <Footer />
     </>

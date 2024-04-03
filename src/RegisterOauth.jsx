@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { jwtDecode as jwt_decode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import Footer from "./Footer";
 
 import React from "react";
 
