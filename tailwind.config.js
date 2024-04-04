@@ -16,6 +16,15 @@ export default {
       fontSize: {
         "5xl": "2.5rem",
       },
+      width: {
+        extraLarge: "1136px",
+      },
+      padding: {
+        extraLarge: "269px",
+      },
+      borderWidth: {
+        1.6: "1.6px",
+      },
     },
   },
   plugins: [],

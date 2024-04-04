@@ -69,7 +69,7 @@ function RegisterOauth() {
   return (
     <>
       <div className="font-sora w-full flex justify-center flex-col items-center">
-        <div className="flex justify-center flex-col items-center h-[500px] w-[560px] bg-chapterOneLightBlue rounded-2xl mt-[200px] mb-[120px] border-[1.6px] border-chapterOneBlue">
+        <div className="flex justify-center flex-col items-center h-[500px] w-[560px] bg-chapterOneLightBlue rounded-2xl mt-[200px] mb-[120px] border-1.6 border-chapterOneBlue">
           <p className="font-extrabold text-5xl">Sign up</p>
           <p className="font-light mt-4 text-sm">
             You're taking the first step in the right direction
