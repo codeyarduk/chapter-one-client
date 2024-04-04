@@ -9,7 +9,7 @@ function Packages() {
   }
 
   const loadStripe = () => {
-    fetch("http://localhost:3000/api/payments/create-checkout-session", {
+    fetch("http://138.68.181.103:3000/api/payments/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

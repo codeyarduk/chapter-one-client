@@ -19,7 +19,7 @@ function Nav() {
           <a href="">Home</a>
         </div>
         <div className="hidden xl:block">
-          <button class="py-[11px] mt-[92px] mb-24 w-[240px] text-center text-white rounded-[10px] bg-chapterOneBlue">
+          <button className="py-[11px] mt-[92px] mb-24 w-[240px] text-center text-white rounded-[10px] bg-chapterOneBlue">
             Login or Signup
           </button>
         </div>
