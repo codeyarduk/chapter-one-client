@@ -14,6 +14,7 @@ export default {
         chapterOneDarkBlue: "#141359",
       },
       fontSize: {
+        "2.5xl": "1.75rem",
         "5xl": "2.5rem",
       },
       width: {
@@ -24,6 +25,9 @@ export default {
       },
       borderWidth: {
         1.6: "1.6px",
+      },
+      margin: {
+        200: "200px",
       },
     },
   },
