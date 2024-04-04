@@ -27,7 +27,7 @@ function Home() {
                 Powered by AI.
               </p>
             </div>
-            <button class="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden">
+            <button className="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden">
               View Packages
             </button>
             <img
@@ -56,7 +56,7 @@ function Home() {
         >
           View Packages
         </a>
-        <button class=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block lg:w-[368px]">
+        <button className=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block lg:w-[368px]">
           View Packages
         </button>
         <div className=" bg-chapterOneLightBlue absolute h-52 top-[356px] w-[100%] -z-10 lg:h-[545px]"></div>
@@ -83,7 +83,7 @@ function Home() {
             <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
               Receive up to 5 comprehensive resume reviews and analyses.
             </p>
-            <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
+            <button className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
               Buy now
             </button>
           </div>
@@ -99,7 +99,7 @@ function Home() {
             <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
               Receive up to 25 comprehensive resume reviews and analyses.
             </p>
-            <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
+            <button className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
               Buy now
             </button>
           </div>
@@ -115,7 +115,7 @@ function Home() {
             <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
               Receive up to 100 comprehensive resume reviews and analyses.
             </p>
-            <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
+            <button className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
               Buy now
             </button>
           </div>
@@ -133,7 +133,7 @@ function Home() {
               Receive up to 25 comprehensive resume reviews and analyses.
             </p>
           </div>
-          <button class="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10">
+          <button className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10">
             Buy now
           </button>
         </div>
