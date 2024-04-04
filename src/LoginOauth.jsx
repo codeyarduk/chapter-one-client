@@ -42,7 +42,10 @@ function LoginOauth() {
     })
       .then((response) => response.text())
       .then((data) => {
-        console.log(data);
+        // const jsonData = JSON.parse(data);
+        Cookies.set("user", data, { expires: 7 });
+        console.log(Cookies.get("user"));
+        // console.log(data);
         setOutCome(data);
 
         // Save the session token in a cookie

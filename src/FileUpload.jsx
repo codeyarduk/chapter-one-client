@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
+import Cookies from "js-cookie";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
@@ -14,8 +15,13 @@ const FileUpload = () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("http://138.68.181.103:3000/upload", {
+    const credential = Cookies.get("credential");
+
+    fetch("http://localhost:3000/upload", {
       method: "POST",
+      headers: {
+        Authorization: credential,
+      },
       body: formData,
     })
       .then((response) => {

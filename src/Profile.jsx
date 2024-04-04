@@ -1,43 +1,40 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { jwtDecode as jwt_decode } from "jwt-decode";
 
-// { email, name, uses }
 function Profile() {
-  const location = useLocation();
   const navigate = useNavigate();
-  const email = location.state?.email;
-  const firstName = location.state?.firstName;
-  const lastName = location.state?.lastName;
-  const uses = location.state?.uses;
+
   const credential = Cookies.get("credential");
+  const userCookie = Cookies.get("user");
+  const user = userCookie ? JSON.parse(userCookie) : null;
+  const email = user?.email;
+  const firstName = user?.name;
+  const lastName = user?.lastName;
+  const uses = user?.uses;
 
   console.log("THIS IS: " + credential);
   useEffect(() => {
-    if (!email) {
+    if (!credential || !user) {
       navigate("/login");
     }
-  }, [email, firstName, lastName, uses, navigate]);
+  }, []);
 
-  if (!email) {
-    // navigate("/login");
-    // return null;
-    console.log("No email");
-    return (
-      <div className="pt-20">
-        <h2>Profile</h2>
-        <p>Not logged in</p>
-      </div>
-    );
+  if (!user) {
+    return null; // Don't render the component
   }
+
+
+  // <h2>Profile</h2>
+  // <p>Email: {email}</p>
+  // <p>Name: {firstName}</p>
+  // <p>Last name: {lastName}</p>
+  // <p>Uses: {uses}</p>
 
   return (
     <div className="pt-20">
-      <h2>Profile</h2>
-      <p>Email: {email}</p>
-      <p>Name: {firstName}</p>
-      <p>Last name: {lastName}</p>
-      <p>Uses: {uses}</p>
+
     </div>
   );
 }
