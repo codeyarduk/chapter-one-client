@@ -1,13 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./App.css";
 import Cookies from "js-cookie";
+import Footer from "./Footer";
+import FileUploadSection from "./Upload Components/FileUploadSection";
+import JobSpecification from "./Upload Components/JobSpec";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [review, setReview] = useState("");
+  const [tempJobTitle, setTempJobTitle] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [inputSelected, setInputSelected] = useState(false);
+
+  // TEST CODE FOR UPLOADING FILE
+
+  const fileInput = useRef();
+  const [fileName, setFileName] = useState("No file selected");
+
+  const handleFileUpload = () => {
+    fileInput.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setFileName(file ? file.name : "No file selected");
+    // Handle the file here
+    setFile(event.target.files[0]);
+  };
+
+  // TEST CODE FOR UPLOADING FILE
+
+  // setJobTitle("Software Engineer");
+  const handleInputChange = (event) => {
+    setTempJobTitle(event.target.value);
+  };
+
+  const handleContinueClick = () => {
+    // Handle the continue button click here
+    setJobTitle(tempJobTitle);
+  };
+  useEffect(() => {
+    // setJobTitle("");
+  }, [jobTitle]);
 
   const onFileChange = (event) => {
+    const file = event.target.files[0];
+
+    setFileName(file ? file.name : "No file selected");
+
     setFile(event.target.files[0]);
   };
 
@@ -17,7 +58,7 @@ const FileUpload = () => {
 
     const credential = Cookies.get("credential");
 
-    fetch("http://localhost:3000/upload", {
+    fetch("http://138.68.181.103:3000/upload", {
       method: "POST",
       headers: {
         Authorization: credential,
@@ -37,24 +78,25 @@ const FileUpload = () => {
       .catch((err) => console.error(err));
   };
 
-  return (
-    <div className="flex flex-col justify-start items-start text-white bg-[#10061f] h-svh p-10 w-full">
-      <p className="text-8xl font-archivoBlack text-[#fbf5ec] text-start font-extrabold tracking-wide pt-20">
-        Chapter One
-      </p>
-      <p className="mb-10 text-start ml-2 mt-10 text-2xl font-medium italic">
-        Start the next chapter of your career with the power of AI
-      </p>
-      <input type="file" onChange={onFileChange} className="" />
-      <button
-        onClick={onFileUpload}
-        className="py-4 px-20 border-2  mt-10 rounded-lg mb-10"
-      >
-        Upload
-      </button>
-
-      <p>{review}</p>
+  return jobTitle ? (
+    <div>
+      <FileUploadSection
+        fileInput={fileInput}
+        onFileChange={onFileChange}
+        handleFileUpload={handleFileUpload}
+        onFileUpload={onFileUpload}
+        fileName={fileName}
+        review={review}
+      />
     </div>
+  ) : (
+    <JobSpecification
+      tempJobTitle={tempJobTitle}
+      handleInputChange={handleInputChange}
+      setInputSelected={setInputSelected}
+      inputSelected={inputSelected}
+      handleContinueClick={handleContinueClick}
+    />
   );
 };
 

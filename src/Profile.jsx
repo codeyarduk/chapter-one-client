@@ -64,7 +64,10 @@ function Profile() {
         {/* Start my review */}
         <div>
           <div className=" xl:mt-16 xl:w-extraLarge flex items-center justify-center xl:h-[111px] rounded-2xl xl:bg-chapterOneLightBlue">
-            <button className="h-[47px] mt-2 xl:mt-0 w-small rounded-xl font-semibold bg-chapterOneBlue text-white tracking-wide">
+            <button
+              className="h-[47px] mt-2 xl:mt-0 w-small rounded-xl font-semibold bg-chapterOneBlue text-white tracking-wide"
+              onClick={() => navigate("/upload")}
+            >
               Start my review
             </button>
           </div>
