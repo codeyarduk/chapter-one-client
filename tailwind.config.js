@@ -17,11 +17,13 @@ export default {
       },
       fontSize: {
         "2.5xl": "1.75rem",
+        "3.5xl": "2rem",
         "5xl": "2.5rem",
         "6xl": "3rem",
       },
       width: {
         small: "336px",
+        medium: "536px",
         extraLarge: "1136px",
       },
       padding: {
