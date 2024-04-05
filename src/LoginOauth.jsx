@@ -10,6 +10,7 @@ import React from "react";
 function LoginOauth() {
   const [user, setUser] = useState({});
   const [outcome, setOutCome] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -58,19 +59,23 @@ function LoginOauth() {
 
   useEffect(() => {
     /* global google */
-    google.accounts.id.initialize({
-      client_id:
-        "886756526696-8pc6lu70409d3uu0jvfkojk02kjoak7t.apps.googleusercontent.com",
-      callback: handleCallback,
-      //   prompt: "select_account",
-    });
+    window.onload = () => {
+      setIsLoading(false);
+      google.accounts.id.initialize({
+        client_id:
+          "886756526696-8pc6lu70409d3uu0jvfkojk02kjoak7t.apps.googleusercontent.com",
+        callback: handleCallback,
+        //   prompt: "select_account",
+      });
+      /* global google */
 
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      theme: "filled_white",
-      size: "large",
-      prompt_parent_id: "signInDiv",
-    });
-  }, []);
+      google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+        theme: "filled_white",
+        size: "large",
+        prompt_parent_id: "signInDiv",
+      });
+    };
+  }, [google.accounts.id, handleCallback]);
 
   return (
     <>

@@ -54,16 +54,23 @@ function RegisterOauth() {
 
   useEffect(() => {
     /* global google */
-    google.accounts.id.initialize({
-      client_id:
-        "886756526696-8pc6lu70409d3uu0jvfkojk02kjoak7t.apps.googleusercontent.com",
-      callback: handleCallback,
-    });
+    if (window.google) {
+      /* global google */
 
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      theme: "outline",
-      size: "large",
-    });
+      google.accounts.id.initialize({
+        client_id:
+          "886756526696-8pc6lu70409d3uu0jvfkojk02kjoak7t.apps.googleusercontent.com",
+        callback: handleCallback,
+      });
+      /* global google */
+
+      google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+        theme: "outline",
+        size: "large",
+      });
+    } else {
+      console.error("Google API not loaded");
+    }
   }, []);
 
   return (
