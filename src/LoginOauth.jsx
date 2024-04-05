@@ -10,6 +10,7 @@ import React from "react";
 function LoginOauth() {
   const [user, setUser] = useState({});
   const [outcome, setOutCome] = useState("");
+  const [isGoogleApiLoaded, setIsGoogleApiLoaded] = useState(false);
 
   const navigate = useNavigate();
 
@@ -20,14 +21,6 @@ function LoginOauth() {
     sendEmail(response.credential);
     Cookies.set("credential", response.credential, { expires: 7 });
     setUser(userObject);
-    navigate("/profile", {
-      state: {
-        email: userObject.email,
-        firstName: userObject.given_name,
-        lastName: userObject.family_name,
-        uses: 0,
-      },
-    });
   }
 
   const sendEmail = (userObject) => {
@@ -50,6 +43,14 @@ function LoginOauth() {
 
         // Save the session token in a cookie
         // Cookies.set("sessionToken", data, { expires: 7 });
+        navigate("/profile", {
+          state: {
+            email: userObject.email,
+            firstName: userObject.given_name,
+            lastName: userObject.family_name,
+            uses: 0,
+          },
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -57,20 +58,31 @@ function LoginOauth() {
   };
 
   useEffect(() => {
-    /* global google */
-    google.accounts.id.initialize({
-      client_id:
-        "886756526696-8pc6lu70409d3uu0jvfkojk02kjoak7t.apps.googleusercontent.com",
-      callback: handleCallback,
-      //   prompt: "select_account",
-    });
-
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      theme: "filled_white",
-      size: "large",
-      prompt_parent_id: "signInDiv",
-    });
+    const script = document.createElement("script");
+    script.src = "https://accounts.google.com/gsi/client";
+    script.async = true;
+    script.onload = () => setIsGoogleApiLoaded(true);
+    document.body.appendChild(script);
   }, []);
+
+  useEffect(() => {
+    /* global google */
+    if (isGoogleApiLoaded) {
+      google.accounts.id.initialize({
+        client_id:
+          "886756526696-8pc6lu70409d3uu0jvfkojk02kjoak7t.apps.googleusercontent.com",
+        callback: handleCallback,
+        //   prompt: "select_account",
+      });
+      /* global google */
+
+      google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+        theme: "filled_white",
+        size: "large",
+        prompt_parent_id: "signInDiv",
+      });
+    }
+  }, [isGoogleApiLoaded, handleCallback]);
 
   return (
     <>
