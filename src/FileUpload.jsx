@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import "./App.css";
 import Cookies from "js-cookie";
@@ -12,11 +14,37 @@ const FileUpload = () => {
   const [tempJobTitle, setTempJobTitle] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [inputSelected, setInputSelected] = useState(false);
+  const [fileUploaded, setFileUploaded] = useState(false);
+
+  // COOKIES USER v
+
+  const navigate = useNavigate();
+
+  const credential = Cookies.get("credential");
+  const userCookie = Cookies.get("user");
+  const user = userCookie ? JSON.parse(userCookie) : null;
+  const email = user?.email;
+  const firstName = user?.name;
+  const lastName = user?.lastName;
+  const uses = user?.uses;
+
+  console.log("THIS IS: " + credential);
+  useEffect(() => {
+    if (!credential || !user) {
+      navigate("/login");
+    }
+  }, []);
+
+  if (!user) {
+    return null; // Don't render the component
+  }
+
+  // COOKIES USER ^
 
   // TEST CODE FOR UPLOADING FILE
 
   const fileInput = useRef();
-  const [fileName, setFileName] = useState("No file selected");
+  const [fileName, setFileName] = useState("");
 
   const handleFileUpload = () => {
     fileInput.current.click();
@@ -57,6 +85,7 @@ const FileUpload = () => {
     formData.append("file", file);
 
     const credential = Cookies.get("credential");
+    setFileUploaded(true);
 
     fetch("http://138.68.181.103:3000/upload", {
       method: "POST",
@@ -78,25 +107,39 @@ const FileUpload = () => {
       .catch((err) => console.error(err));
   };
 
-  return jobTitle ? (
+  return (
     <div>
-      <FileUploadSection
-        fileInput={fileInput}
-        onFileChange={onFileChange}
-        handleFileUpload={handleFileUpload}
-        onFileUpload={onFileUpload}
-        fileName={fileName}
-        review={review}
-      />
+      {jobTitle && !fileUploaded && (
+        <FileUploadSection
+          fileInput={fileInput}
+          onFileChange={onFileChange}
+          handleFileUpload={handleFileUpload}
+          onFileUpload={onFileUpload}
+          fileName={fileName}
+          review={review}
+        />
+      )}
+      {!jobTitle && (
+        <JobSpecification
+          tempJobTitle={tempJobTitle}
+          handleInputChange={handleInputChange}
+          setInputSelected={setInputSelected}
+          inputSelected={inputSelected}
+          handleContinueClick={handleContinueClick}
+        />
+      )}
+      {fileUploaded && (
+        <div className="flex justify-center pt-40 flex-col  items-center">
+          <div className="w-small">
+            <p>{firstName}</p>
+          </div>
+          <div className="w-small">
+            <p>File uploaded!</p>
+            <p>{review}</p>
+          </div>
+        </div>
+      )}
     </div>
-  ) : (
-    <JobSpecification
-      tempJobTitle={tempJobTitle}
-      handleInputChange={handleInputChange}
-      setInputSelected={setInputSelected}
-      inputSelected={inputSelected}
-      handleContinueClick={handleContinueClick}
-    />
   );
 };
 
