@@ -12,17 +12,8 @@ function Package({ packageID, title, price, description }) {
   function stripeCallback(response) {
     console.log(response);
   }
-
-  //   useEffect(() => {
-  //     if (credential) {
-  //       setDecoded(jwt_decode(credential));
-  //     }
-  //     console.log(decoded);
-  //   }, [decoded]);
-
   const loadStripe = () => {
     console.log(credential);
-
     console.log(decoded);
 
     // http://localhost:3000/api/payments/webhook
@@ -40,7 +31,6 @@ function Package({ packageID, title, price, description }) {
         if (response.ok) {
           console.log(response);
           return response.json();
-          //   .then((json) => Promise.reject(json));
         }
       })
       .then(({ url }) => {
@@ -51,7 +41,6 @@ function Package({ packageID, title, price, description }) {
         } else {
           window.location.href = url;
         }
-        // window.location.href = url;
       })
       //   .then((data) => {
       //     if (data.paymentIntent.status === "succeeded") {
