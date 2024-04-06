@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 // import { jwtDecode as jwt_decode } from "jwt-decode";
@@ -13,24 +13,45 @@ function Profile() {
   const email = user?.email;
   const firstName = user?.name;
   const lastName = user?.lastName;
-  const uses = user?.uses;
+  // const uses = user?.uses;
+
+  const [uses, setUses] = useState(0);
 
   console.log("THIS IS: " + credential);
+
+  const getUses = () => {
+    console.log(email);
+    console.log(credential);
+    fetch("http://138.68.181.103:3000/api/users/uses/" + email, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        user: credential,
+      }),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data);
+        const jsonData = JSON.parse(data);
+        setUses(jsonData.uses);
+        return data;
+      });
+  };
+
   useEffect(() => {
     if (!credential || !user) {
       navigate("/login");
     }
+    getUses();
+    // /api/users/uses/:email
   }, []);
 
   if (!user) {
     return null; // Don't render the component
   }
-
-  // <h2>Profile</h2>
-  // <p>Email: {email}</p>
-  // <p>Name: {firstName}</p>
-  // <p>Last name: {lastName}</p>
-  // <p>Uses: {uses}</p>
 
   return (
     <>
@@ -50,13 +71,13 @@ function Profile() {
           <div className="mt-20 xl:mt-0 w-small xl:w-fit flex flex-row justify-between">
             <div className="border-1.6 rounded-xl border-chapterOneLightBlue">
               <p className="text-sm text-center w-[162px] py-[14px]">
-                Reviews used: 0
+                Reviews used: {uses}
               </p>
             </div>
             {/* Reviews left */}
             <div className="border-1.6 rounded-xl xl:ml-[10px] border-chapterOneLightBlue">
               <p className="text-sm text-center w-[162px] py-[14px] ">
-                Reviews left: 5
+                Reviews left: {uses}
               </p>
             </div>
           </div>

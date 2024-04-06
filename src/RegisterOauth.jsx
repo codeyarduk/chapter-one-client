@@ -92,9 +92,16 @@ function RegisterOauth() {
             You're taking the first step in the right direction
           </p>
           <div id="signInDiv" className="my-12"></div>
-          <p className="font-light text-sm mb-5">
+          <p className="font-light text-sm mb-5 hover:cursor-default">
             Have an account?{" "}
-            <span className="underline text-chapterOneBlue">Login</span>
+            <span
+              className="underline text-chapterOneBlue hover:cursor-pointer"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Login
+            </span>
           </p>
         </div>
       </div>

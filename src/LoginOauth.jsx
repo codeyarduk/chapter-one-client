@@ -106,9 +106,16 @@ function LoginOauth() {
             Login to your existing Chapter One account
           </p>
           <div id="signInDiv" className="my-12"></div>
-          <p className="font-light text-sm mb-5">
+          <p className="font-light text-sm mb-5 hover:cursor-default">
             Don't have an account?{" "}
-            <span className="underline text-chapterOneBlue">Sign up</span>
+            <span
+              onClick={() => {
+                navigate("/register");
+              }}
+              className="underline text-chapterOneBlue hover:cursor-pointer"
+            >
+              Sign up
+            </span>
           </p>
         </div>
       </div>

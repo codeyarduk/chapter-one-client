@@ -85,9 +85,7 @@ function Home() {
               "Receive up to 5 comprehensive resume reviews and analyses."
             }
           />
-
           {/* Standard Package */}
-
           {/* <div className="mx-2 w-[336px] h-[400px] bg-chapterOneBlue flex flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden xl:flex  xl:w-[368px] xl:h-[535px]">
             <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20 xl:text-2xl">
               Standard
@@ -102,11 +100,8 @@ function Home() {
               Buy now
             </button>
           </div> */}
-
-          <StandardPackageDesktop />
-
+          <StandardPackageDesktop packageID={2} />
           {/* Premium Package */}
-
           <Package
             packageID={3}
             title={"Premium"}
@@ -133,7 +128,7 @@ function Home() {
             Buy now
           </button>
         </div> */}
-        <StandardPackageTablet />
+        <StandardPackageTablet packageID={2} />
       </div>
       <div className=" bg-chapterOneLightBlue flex-col flex items-center py-20">
         <div className=" flex-col flex justify-center max-w-[336px] text-2xl lg:max-w-[800px] lg:py-16 xl:text-[32px] xl:max-w-[1100px]">

@@ -12,21 +12,17 @@ function Package({ packageID, title, price, description }) {
   function stripeCallback(response) {
     console.log(response);
   }
-
-  //   useEffect(() => {
-  //     if (credential) {
-  //       setDecoded(jwt_decode(credential));
-  //     }
-  //     console.log(decoded);
-  //   }, [decoded]);
-
   const loadStripe = () => {
     console.log(credential);
-
     console.log(decoded);
 
+    if (!credential) {
+      navigate("/login", { state: { to: "/" } });
+      return null;
+    }
+
     // http://localhost:3000/api/payments/webhook
-    fetch("http://localhost:3000/api/payments/create-checkout-session", {
+    fetch("http://138.68.181.103:3000/api/payments/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +36,6 @@ function Package({ packageID, title, price, description }) {
         if (response.ok) {
           console.log(response);
           return response.json();
-          //   .then((json) => Promise.reject(json));
         }
       })
       .then(({ url }) => {
@@ -51,7 +46,6 @@ function Package({ packageID, title, price, description }) {
         } else {
           window.location.href = url;
         }
-        // window.location.href = url;
       })
       //   .then((data) => {
       //     if (data.paymentIntent.status === "succeeded") {
