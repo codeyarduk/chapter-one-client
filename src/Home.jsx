@@ -1,8 +1,9 @@
 import React from "react";
 import Footer from "./Footer";
 import Nav from "./Nav";
-import Package from "./";
-
+import Package from "./Packages/Package";
+import StandardPackageDesktop from "./Packages/StandardPackageDesktop";
+import StandardPackageTablet from "./Packages/StandardPackageTablet";
 function Home() {
   return (
     <div className=" font-sora text-black">
@@ -64,6 +65,8 @@ function Home() {
       </div>
 
       {/* OUR PACKAGES SECTION */}
+      {/* packageID, title, price, description */}
+
       <div className="flex-col mb-20 flex justify-center items-center relative ">
         <p className="text-[32px] font-extrabold pt-24 max-w-[336px] lg:text-[40px]">
           Our packages
@@ -74,23 +77,18 @@ function Home() {
         </p>
         <div className="flex flex-col lg:flex-row">
           {/* Basic Package */}
-          <div className="mx-2 w-[336px] h-[400px] bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] xl:w-[368px] xl:h-[487px] xl:mt-10">
-            <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20 xl:text-2xl">
-              Basic
-            </p>
-            <p className="font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14 xl:text-[64px]">
-              £49
-            </p>
-            <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
-              Receive up to 5 comprehensive resume reviews and analyses.
-            </p>
-            <button className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
-              Buy now
-            </button>
-          </div>
+          <Package
+            packageID={1}
+            title={"Basic"}
+            price={"49"}
+            description={
+              "Receive up to 5 comprehensive resume reviews and analyses."
+            }
+          />
 
           {/* Standard Package */}
-          <div className="mx-2 w-[336px] h-[400px] bg-chapterOneBlue flex flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden xl:flex  xl:w-[368px] xl:h-[535px]">
+
+          {/* <div className="mx-2 w-[336px] h-[400px] bg-chapterOneBlue flex flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden xl:flex  xl:w-[368px] xl:h-[535px]">
             <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20 xl:text-2xl">
               Standard
             </p>
@@ -103,26 +101,23 @@ function Home() {
             <button className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
               Buy now
             </button>
-          </div>
+          </div> */}
+
+          <StandardPackageDesktop />
 
           {/* Premium Package */}
-          <div className="mx-2 w-[336px] h-[400px] bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneBlue rounded-xl mt-4  lg:w-[400px] lg:h-[474px]  xl:w-[368px] xl:h-[487px] xl:mt-10">
-            <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20 xl:text-2xl">
-              Premium
-            </p>
-            <p className="font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14 xl:text-[64px]">
-              £149
-            </p>
-            <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
-              Receive up to 100 comprehensive resume reviews and analyses.
-            </p>
-            <button className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]">
-              Buy now
-            </button>
-          </div>
+
+          <Package
+            packageID={3}
+            title={"Premium"}
+            price={"149"}
+            description={
+              "Receive up to 100 comprehensive resume reviews and analyses."
+            }
+          />
         </div>
         {/* Standard Package (Tablet View Only) */}
-        <div className="mx-2 w-[336px] h-[400px] bg-chapterOneBlue flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-6 hidden lg:w-[400px] lg:h-[474px] lg:flex xl:hidden">
+        {/* <div className="mx-2 w-[336px] h-[400px] bg-chapterOneBlue flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-6 hidden lg:w-[400px] lg:h-[474px] lg:flex xl:hidden">
           <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20">
             Standard
           </p>
@@ -137,7 +132,8 @@ function Home() {
           <button className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10">
             Buy now
           </button>
-        </div>
+        </div> */}
+        <StandardPackageTablet />
       </div>
       <div className=" bg-chapterOneLightBlue flex-col flex items-center py-20">
         <div className=" flex-col flex justify-center max-w-[336px] text-2xl lg:max-w-[800px] lg:py-16 xl:text-[32px] xl:max-w-[1100px]">
