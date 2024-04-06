@@ -115,7 +115,7 @@ const FileUpload = () => {
     const credential = Cookies.get("credential");
     setFileUploaded(true);
 
-    fetch("http://138.68.181.103:3000/upload", {
+    fetch("https://138.68.181.103:3000/upload", {
       method: "POST",
       headers: {
         Authorization: credential,

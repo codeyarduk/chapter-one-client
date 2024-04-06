@@ -22,7 +22,7 @@ function Package({ packageID, title, price, description }) {
     }
 
     // http://localhost:3000/api/payments/webhook
-    fetch("http://localhost:3000/api/payments/create-checkout-session", {
+    fetch("https://138.68.181.103:3000/api/payments/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
