@@ -4,18 +4,27 @@ import Cookies from "js-cookie";
 import { jwtDecode as jwt_decode } from "jwt-decode";
 
 function Package({ packageID, title, price, description }) {
+  const [decoded, setDecoded] = useState(null);
+
   const navigate = useNavigate();
-  const credential = Cookies.get("credential");
-  if (credential) {
-    const decoded = jwt_decode(credential);
-  }
+  const credential = Cookies.get("user");
 
   function stripeCallback(response) {
     console.log(response);
   }
 
+  //   useEffect(() => {
+  //     if (credential) {
+  //       setDecoded(jwt_decode(credential));
+  //     }
+  //     console.log(decoded);
+  //   }, [decoded]);
+
   const loadStripe = () => {
     console.log(credential);
+
+    console.log(decoded);
+
     // http://localhost:3000/api/payments/webhook
     fetch("http://localhost:3000/api/payments/create-checkout-session", {
       method: "POST",
@@ -24,6 +33,7 @@ function Package({ packageID, title, price, description }) {
       },
       body: JSON.stringify({
         item: { id: packageID, quantity: 1 },
+        token: credential,
       }),
     })
       .then((response) => {
@@ -37,19 +47,19 @@ function Package({ packageID, title, price, description }) {
         console.log(url);
         if (!credential) {
           navigate("/login", { state: { to: url } });
-          //   return null;
+          return null;
         } else {
           window.location.href = url;
         }
         // window.location.href = url;
       })
-      .then((data) => {
-        if (data.paymentIntent.status === "succeeded") {
-          console.log("Payment was successful");
-        } else {
-          console.log("Payment failed");
-        }
-      })
+      //   .then((data) => {
+      //     if (data.paymentIntent.status === "succeeded") {
+      //       console.log("Payment was successful");
+      //     } else {
+      //       console.log("Payment failed");
+      //     }
+      //   })
       .catch((error) => {
         // console.log(url);
         console.log("Problems in paradise");

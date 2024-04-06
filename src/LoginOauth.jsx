@@ -51,8 +51,9 @@ function LoginOauth() {
         // Save the session token in a cookie
         // Cookies.set("sessionToken", data, { expires: 7 });
         if (location.state?.to) {
-          console.log(location.state.to);
-          window.location.href = location.state.to;
+          // console.log(location.state.to);
+          // window.location.href = location.state.to;
+          navigate("/");
           return null;
         }
         navigate("/profile", {
