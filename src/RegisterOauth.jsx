@@ -23,7 +23,7 @@ function RegisterOauth() {
   }
 
   const sendEmail = (userObject) => {
-    fetch("http://138.68.181.103:3000/api/users/register", {
+    fetch("http://localhost:3000/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,8 +34,9 @@ function RegisterOauth() {
     })
       .then((response) => response.text())
       .then((data) => {
-        console.log(data);
-        setOutCome(data);
+        // console.log(data);
+        // setOutCome(data);
+        Cookies.set("user", data, { expires: 7 });
 
         // Save the session token in a cookie
         // Cookies.set("sessionToken", data, { expires: 7 });
