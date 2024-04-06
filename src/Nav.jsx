@@ -13,7 +13,7 @@ function Nav() {
           </p>
         </div>
         <div className="xl:hidden">
-          <img src="src\assets\hamburger.svg" alt="" className="w-7 lg:w-9" />
+          <img src="hamburger.svg" alt="" className="w-7 lg:w-9" />
         </div>
         <div className="hidden w-[400px] xl:flex justify-between">
           <a href="">Our packages</a>
