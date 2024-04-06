@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Nav() {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full font-sora flex flex-row justify-center items-center absolute py-9 lg:py-12">
       <div className="w-full font-sora flex flex-row justify-between items-center absolute py-6 px-5 max-w-[377px] lg:max-w-[812px] xl:max-w-[1180px]">
@@ -19,7 +21,12 @@ function Nav() {
           <a href="">Home</a>
         </div>
         <div className="hidden xl:block">
-          <button className="py-[11px] mt-[92px] mb-24 w-[240px] text-center text-white rounded-[10px] bg-chapterOneBlue">
+          <button
+            onClick={() => {
+              navigate("/login");
+            }}
+            className="py-[11px] mt-[92px] mb-24 w-[240px] text-center text-white rounded-[10px] bg-chapterOneBlue"
+          >
             Login or Signup
           </button>
         </div>

@@ -14,8 +14,12 @@ function Package({ packageID, title, price, description }) {
   }
   const loadStripe = () => {
     console.log(credential);
-
     console.log(decoded);
+
+    if (!credential) {
+      navigate("/login", { state: { to: "/" } });
+      return null;
+    }
 
     // http://localhost:3000/api/payments/webhook
     fetch("http://localhost:3000/api/payments/create-checkout-session", {
