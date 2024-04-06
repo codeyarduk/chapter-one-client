@@ -24,7 +24,7 @@ function Profile() {
     console.log(credential);
     // http://138.68.181.103:3000
     // http://localhost:3000
-    fetch("http://localhost:3000/api/users/uses/" + email, {
+    fetch("http://138.68.181.103:3000/api/users/uses/" + email, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -29,7 +29,7 @@ function LoginOauth() {
   }
 
   const sendEmail = (userObject) => {
-    fetch("http://localhost:3000/api/users/login", {
+    fetch("http://138.68.181.103:3000/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
