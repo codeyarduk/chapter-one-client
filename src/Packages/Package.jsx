@@ -20,7 +20,8 @@ function Package({ packageID, title, price, description }) {
       navigate("/login", { state: { to: "/" } });
       return null;
     }
-
+    // 138.68.181.103
+    // http://138.68.181.103:3000/api/payments/webhook
     // http://localhost:3000/api/payments/webhook
     fetch("http://138.68.181.103:3000/api/payments/create-checkout-session", {
       method: "POST",
