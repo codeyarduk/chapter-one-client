@@ -129,13 +129,17 @@ const FileUpload = () => {
         />
       )}
       {fileUploaded && (
-        <div className="flex justify-center pt-40 flex-col  items-center">
-          <div className="w-small">
-            <p>{firstName}</p>
+        <div className="flex pt-[72px] bg-chapterOneLightBlue justify-center flex-col items-center font-sora">
+          <div className="w-full h-[344px] flex justify-center items-center bg-chapterOneLightBlue">
+            <p className="w-small font-extrabold text-center text-5xl">
+              {firstName}, Here's Your Review
+            </p>
           </div>
-          <div className="w-small">
-            <p>File uploaded!</p>
-            <p>{review}</p>
+          <div className="w-full bg-white flex justify-center flex-col items-center">
+            <div className="w-small bg-white mt-[104px]">
+              <p className="text-2xl font-extrabold mb-4">Work Experience Analysis</p>
+              <p>{review}</p>
+            </div>
           </div>
         </div>
       )}

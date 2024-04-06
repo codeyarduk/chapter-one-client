@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { jwtDecode as jwt_decode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import Footer from "./Footer";
 
@@ -11,8 +11,13 @@ function LoginOauth() {
   const [user, setUser] = useState({});
   const [outcome, setOutCome] = useState("");
   const [isGoogleApiLoaded, setIsGoogleApiLoaded] = useState(false);
+  const [toState, setToState] = useState(null);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // const to = location.state?.to;
+  // setToState(location.state?.to);
 
   function handleCallback(response) {
     // console.log("Encoded JWT ID token: " + response.credential);
@@ -36,6 +41,8 @@ function LoginOauth() {
       .then((response) => response.text())
       .then((data) => {
         // const jsonData = JSON.parse(data);
+        console.log("v");
+        // console.log(to);
         Cookies.set("user", data, { expires: 7 });
         console.log(Cookies.get("user"));
         // console.log(data);
@@ -43,6 +50,11 @@ function LoginOauth() {
 
         // Save the session token in a cookie
         // Cookies.set("sessionToken", data, { expires: 7 });
+        if (location.state?.to) {
+          console.log(location.state.to);
+          window.location.href = location.state.to;
+          return null;
+        }
         navigate("/profile", {
           state: {
             email: userObject.email,

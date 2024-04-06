@@ -9,16 +9,13 @@ function Packages() {
   }
 
   const loadStripe = () => {
-    fetch("http://138.68.181.103:3000/api/payments/create-checkout-session", {
+    fetch("http://localhost:3000/api/payments/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        items: [
-          { id: 1, quantity: 3 },
-          { id: 2, quantity: 1 },
-        ],
+        item: { id: 1, quantity: 1 },
       }),
     })
       .then((response) => {
