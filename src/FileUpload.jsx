@@ -11,10 +11,13 @@ import JobSpecification from "./Upload Components/JobSpec";
 const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [review, setReview] = useState("");
+  const [review2, setReview2] = useState("");
   const [tempJobTitle, setTempJobTitle] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [inputSelected, setInputSelected] = useState(false);
   const [fileUploaded, setFileUploaded] = useState(false);
+
+  const [responseObject, setResponseObject] = useState({});
 
   // COOKIES USER v
 
@@ -80,6 +83,31 @@ const FileUpload = () => {
     setFile(event.target.files[0]);
   };
 
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+
   const onFileUpload = () => {
     const formData = new FormData();
     formData.append("file", file);
@@ -87,25 +115,53 @@ const FileUpload = () => {
     const credential = Cookies.get("credential");
     setFileUploaded(true);
 
-    fetch("http://138.68.181.103:3000/upload", {
+    fetch("http://localhost:3000/upload", {
       method: "POST",
       headers: {
         Authorization: credential,
       },
       body: formData,
     })
-      .then((response) => {
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder("utf-8");
-
-        reader.read().then(function process({ done, value }) {
-          if (done) return;
-          setReview((prevReview) => prevReview + decoder.decode(value));
-          return reader.read().then(process);
-        });
+      .then((response) => response.json()) // parse the response as text
+      .then((data) => {
+        // console.log(data);
+        setResponseObject(data);
+        // data is the response string from the server
+        // console.log(responseObject);
       })
       .catch((err) => console.error(err));
   };
+
+  useEffect(() => {
+    console.log(responseObject);
+  }, [responseObject]);
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
 
   return (
     <div>
@@ -137,8 +193,11 @@ const FileUpload = () => {
           </div>
           <div className="w-full bg-white flex justify-center flex-col items-center">
             <div className="w-small bg-white mt-[104px]">
-              <p className="text-2xl font-extrabold mb-4">Work Experience Analysis</p>
-              <p>{review}</p>
+              <p className="text-2xl font-extrabold mb-4">
+                Work Experience Analysis
+              </p>
+              <p>{responseObject.ats_formatting}</p>
+              <p>{}</p>
             </div>
           </div>
         </div>
