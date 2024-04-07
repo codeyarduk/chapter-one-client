@@ -23,7 +23,7 @@ function Package({ packageID, title, price, description }) {
     // 138.68.181.103
     // http://138.68.181.103:3000/api/payments/webhook
     // http://localhost:3000/api/payments/webhook
-    fetch("https://138.68.181.103:3000/api/payments/create-checkout-session", {
+    fetch("http://chapteroneai.com/api/payments/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

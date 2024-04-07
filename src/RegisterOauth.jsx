@@ -23,7 +23,7 @@ function RegisterOauth() {
   }
 
   const sendEmail = (userObject) => {
-    fetch("https://138.68.181.103:3000/api/users/register", {
+    fetch("https://chapteroneai.com/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
