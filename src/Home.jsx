@@ -33,7 +33,7 @@ function Home() {
               View Packages
             </button>
             <img
-              src="src\assets\hero-image.svg"
+              src="hero-image.svg"
               alt=""
               className="absolute top-1/2 left-[60%] transform translate-x-[230px] translate-y-[-230px] hidden lg:block z-[10] "
             />
@@ -48,7 +48,7 @@ function Home() {
           Watch our video to understand the process of how we work
         </p>
         <img
-          src="src\assets\temp_video.png"
+          src="temp_video.png"
           alt=""
           className="w-[336px] rounded-lg lg:w-[820px]"
         />
