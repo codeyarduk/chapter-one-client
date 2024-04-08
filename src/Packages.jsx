@@ -9,7 +9,7 @@ function Packages() {
   }
 
   const loadStripe = () => {
-    fetch("http://chapteroneai.com/api/payments/create-checkout-session", {
+    fetch("https://chapteroneai.com/api/payments/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
