@@ -122,12 +122,10 @@ const FileUpload = () => {
       },
       body: formData,
     })
-      .then((response) => response.json()) // parse the response as text
+      .then((response) => console.log(response))
+      // .then((response) => response.json()) // parse the response as text
       .then((data) => {
-        // console.log(data);
         setResponseObject(data);
-        // data is the response string from the server
-        // console.log(responseObject);
       })
       .catch((err) => console.error(err));
   };
