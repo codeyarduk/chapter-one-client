@@ -1,24 +1,92 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Nav() {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   return (
     <div className="w-full font-sora flex flex-row justify-center items-center absolute py-9 lg:py-12">
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex justify-start items-center flex-col  top-0 dropdown-menu fixed text-black bg-white w-full h-screen z-30 xl:hidden"
+        >
+          {/* Add your menu items here */}
+          <div className="w-small flex flex-col items-center absolute pt-[100px]">
+            <Link to="/">
+              <button className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue">
+                Home
+              </button>
+            </Link>
+            <HashLink to="/#packages">
+              <button className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue">
+                Our packages
+              </button>
+            </HashLink>
+            <HashLink to="/#how-it-works">
+              <button
+                onClick={() => navigate("/#how-it-works")}
+                className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue"
+              >
+                How it works
+              </button>
+            </HashLink>
+            <Link to="/login">
+              <button
+                onClick={() => navigate("/#how-it-works")}
+                className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue"
+              >
+                Login
+              </button>
+            </Link>
+            <Link to="/register">
+              <button className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue">
+                Sign up
+              </button>
+            </Link>
+          </div>
+        </div>
+      )}
       <div className="w-full font-sora flex flex-row justify-between items-center absolute py-6 px-5 max-w-[377px] lg:max-w-[812px] xl:max-w-[1180px]">
-        <div>
-          <p className="font-extrabold text-xl text-chapterOneDarkBlue lg:text-2xl">
+        <div
+          className="z-50 hover:cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          <p className="font-extrabold text-xl text-chapterOneDarkBlue lg:text-2xl ">
             Chapter <span className="text-chapterOneBlue">One</span>
           </p>
         </div>
-        <div className="xl:hidden">
-          <img src="hamburger.svg" alt="" className="w-7 lg:w-9" />
+        <div className="xl:hidden z-40 " onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <img
+              src="hamburger-open.svg"
+              alt="open burger menu"
+              className="w-7 lg:w-9 hover:cursor-pointer py-3"
+            />
+          ) : (
+            <img
+              src="hamburger.svg"
+              alt="closed burger menu"
+              className="w-7 lg:w-9 hover:cursor-pointer py-3"
+            />
+          )}
         </div>
+
         <div className="hidden w-[400px] xl:flex justify-between">
-          <a href="">Our packages</a>
-          <a href="">How it works</a>
-          <a href="">Home</a>
+          <HashLink to="/#packages">Our packages</HashLink>
+          <HashLink to="/#how-it-works">How it works</HashLink>
+          <button onClick={() => navigate("/")}>Home</button>
         </div>
         <div className="hidden xl:block">
           <button
@@ -27,7 +95,7 @@ function Nav() {
             }}
             className="py-[11px] mt-[92px] mb-24 w-[240px] text-center text-white rounded-[10px] bg-chapterOneBlue"
           >
-            Login or Signup
+            Login or Sign up
           </button>
         </div>
       </div>
