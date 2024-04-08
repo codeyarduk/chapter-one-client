@@ -162,7 +162,7 @@ const FileUpload = () => {
   //
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       {jobTitle && !fileUploaded && (
         <FileUploadSection
           fileInput={fileInput}
@@ -285,6 +285,7 @@ const FileUpload = () => {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 };

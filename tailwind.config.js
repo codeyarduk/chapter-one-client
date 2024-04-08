@@ -24,6 +24,7 @@ export default {
       width: {
         small: "336px",
         medium: "536px",
+        large: "816px",
         extraLarge: "1136px",
       },
       padding: {

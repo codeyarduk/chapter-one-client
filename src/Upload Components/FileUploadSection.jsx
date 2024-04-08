@@ -11,7 +11,7 @@ const FileUploadSection = ({
   fileUploaded,
 }) => {
   return (
-    <div>
+    <div className="flex-grow">
       <div className="pt-extraLarge flex justify-center font-sora">
         <div className="w-small flex flex-col justify-center items-center text-center">
           <p className="font-extrabold text-3.5xl text-center">
@@ -31,7 +31,7 @@ const FileUploadSection = ({
               onClick={handleFileUpload}
               className="mt-20 border-1.6 border-[#0E9F1D] w-small text-sm text-[#0E9F1D] lg:w-medium xl:w-[560px] h-[45px] font-light bg-[#F2FFF4] px-10 rounded-xl "
             >
-                Your upload was successful
+              Your upload was successful
             </button>
           )}
           {!fileName && (
@@ -53,7 +53,6 @@ const FileUploadSection = ({
           {/* <p>{review}</p> */}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

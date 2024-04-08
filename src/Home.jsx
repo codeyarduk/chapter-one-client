@@ -30,9 +30,12 @@ function Home() {
                 Powered by AI.
               </p>
             </div>
-            <button className="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden">
+            <HashLink
+              to="/#packages"
+              className="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden"
+            >
               View Packages
-            </button>
+            </HashLink>
             <img
               src="hero-image.svg"
               alt=""
