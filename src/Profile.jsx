@@ -131,7 +131,7 @@ function Profile() {
           <div className=" xl:mt-16 mt-12 xl:w-extraLarge flex items-center justify-center rounded-2xl xl:bg-chapterOneLightBlue">
             <div className="h-[53px] flex justify-center items-center mt-2 xl:mt-0 w-small lg:w-large rounded-xl bg-chapterOneLightBlue">
               <p className="text-sm text-chapterOneRed font-light">
-                Oh no, it appears you're all out of reviews
+                You have no past reviews
               </p>
             </div>
           </div>
