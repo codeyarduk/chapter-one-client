@@ -29,7 +29,7 @@ function LoginOauth() {
   }
 
   const sendEmail = (userObject) => {
-    fetch(process.env.BASE_URL + "/api/users/login", {
+    fetch("http://localhost:3000/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -115,7 +115,7 @@ const FileUpload = () => {
     const credential = Cookies.get("credential");
     setFileUploaded(true);
 
-    fetch(`${process.env.REACT_APP_BASE_URL}/api/upload`, {
+    fetch("http://localhost:3000/api/upload", {
       method: "POST",
       headers: {
         Authorization: credential,
@@ -184,14 +184,17 @@ const FileUpload = () => {
       )}
       {fileUploaded && (
         <div className="flex pt-[72px] bg-chapterOneLightBlue justify-center flex-col items-center font-sora">
-          <div className="w-full h-[344px] flex justify-center items-center bg-chapterOneLightBlue">
-            <p className="w-small font-extrabold text-center text-5xl">
+          <div className="w-full h-[344px] lg:h-[312px] xl:h-[442px] flex justify-center items-center bg-chapterOneLightBlue">
+            <p className="w-small font-extrabold lg:pb-8 text-center text-5xl xl:text-6xl lg:w-[816px]">
               {firstName}, Here's Your Review
             </p>
           </div>
+          {/* SECTION ONE: FORMATTING */}
           <div className="w-full bg-white flex justify-center flex-col items-center">
-            <div className="w-small bg-white mt-[104px]">
-              <p className="text-2xl font-extrabold mb-4">Formatting</p>
+            <div className="w-small lg:w-[816px] xl:w-extraLarge mt-[104px]">
+              <p className="text-2xl font-extrabold mb-4 xl:text-3.5xl">
+                Formatting
+              </p>
               <p>
                 Here, we are just going to go over the 6 most important things
                 when it comes the formatting of your resume. Going over each one
@@ -199,22 +202,85 @@ const FileUpload = () => {
                 outlining what you can improve upon and what specific changes
                 you can make to improve the formatting.
               </p>
-              <p className="font-bold mb-4 mt-16">Distinct Section Headings</p>
-              <p>{responseObject.distinct_section_headings}</p>
-              <p className="font-bold mb-4 mt-16">Logical Section Flow</p>
-              <p>{responseObject.logical_section_flow}</p>
-              <p className="font-bold mb-4 mt-16">
-                Separation of Past Work Experience
+            </div>
+            <div className="w-small bg-white lg:w-[816px] lg:flex lg:flex-wrap lg:justify-between xl:w-extraLarge">
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">
+                  Distinct Section Headings
+                </p>
+                <p className="">{responseObject.distinct_section_headings}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">Logical Section Flow</p>
+                <p>{responseObject.logical_section_flow}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">
+                  Separation of Past Work Experience
+                </p>
+                <p>{responseObject.separation_of_past_work_experience}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">Skill Categorization</p>
+                <p>{responseObject.skill_categorization}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">
+                  Clarity in Educational Background
+                </p>
+                <p>{responseObject.clarity_in_educational_background}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">Additional Sections</p>
+                <p>{responseObject.additional_sections}</p>
+              </div>
+            </div>
+          </div>
+          {/* SECTION 2 */}
+          <div className="w-full bg-white flex justify-center flex-col items-center">
+            <div className="w-small lg:w-[816px] xl:w-extraLarge mt-[104px]">
+              <p className="text-2xl font-extrabold mb-4 xl:text-3.5xl">
+                Formatting
               </p>
-              <p>{responseObject.separation_of_past_work_experience}</p>
-              <p className="font-bold mb-4 mt-16">Skill Categorization</p>
-              <p>{responseObject.skill_categorization}</p>
-              <p className="font-bold mb-4 mt-16">
-                Clarity in Educational Background
+              <p>
+                Here, we are just going to go over the 6 most important things
+                when it comes the formatting of your resume. Going over each one
+                and giving accurate suggestions based upon your resume,
+                outlining what you can improve upon and what specific changes
+                you can make to improve the formatting.
               </p>
-              <p>{responseObject.clarity_in_educational_background}</p>
-              <p className="font-bold mb-4 mt-16">Additional Sections</p>
-              <p>{responseObject.additional_sections}</p>
+            </div>
+            <div className="w-small bg-white lg:w-[816px] lg:flex lg:flex-wrap lg:justify-between xl:w-extraLarge">
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">
+                  Distinct Section Headings
+                </p>
+                <p className="">{responseObject.distinct_section_headings}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">Logical Section Flow</p>
+                <p>{responseObject.logical_section_flow}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">
+                  Separation of Past Work Experience
+                </p>
+                <p>{responseObject.separation_of_past_work_experience}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">Skill Categorization</p>
+                <p>{responseObject.skill_categorization}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">
+                  Clarity in Educational Background
+                </p>
+                <p>{responseObject.clarity_in_educational_background}</p>
+              </div>
+              <div className="w-small xl:w-medium">
+                <p className="font-bold mb-4 mt-16">Additional Sections</p>
+                <p>{responseObject.additional_sections}</p>
+              </div>
             </div>
           </div>
         </div>

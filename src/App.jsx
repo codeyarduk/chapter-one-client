@@ -7,8 +7,8 @@ import RegisterOauth from "./RegisterOauth";
 import LoginOauth from "./LoginOauth.jsx";
 import Profile from "./Profile";
 import Packages from "./Packages";
-
-
+import CookieConsent from "./CookiesConsent.jsx";
+import CookiesPolicy from "./CookiesPolicy.jsx";
 function App() {
   return (
     <>
@@ -20,7 +20,9 @@ function App() {
         <Route path="/register" element={<RegisterOauth />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/packages" element={<Packages />} />
+        <Route path="/cookies-policy" element={<CookiesPolicy />} />
       </Routes>
+      <CookieConsent />
     </>
   );
 }
