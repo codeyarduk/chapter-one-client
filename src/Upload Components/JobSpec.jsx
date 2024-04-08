@@ -10,7 +10,7 @@ const JobSpecification = ({
   handleContinueClick,
 }) => {
   return (
-    <div>
+    <div className="flex-grow">
       <div className="pt-extraLarge flex justify-center font-sora flex-col items-center">
         <div className="w-small lg:w-medium xl:w-[560px]">
           <p className="font-extrabold text-3.5xl text-center">
@@ -42,7 +42,6 @@ const JobSpecification = ({
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 };

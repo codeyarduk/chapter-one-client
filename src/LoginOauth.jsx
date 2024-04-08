@@ -98,8 +98,8 @@ function LoginOauth() {
   }, [isGoogleApiLoaded, handleCallback]);
 
   return (
-    <>
-      <div className="font-sora w-full flex justify-center flex-col items-center">
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow font-sora w-full flex justify-center flex-col items-center">
         <div className="flex justify-center flex-col items-center h-[500px] w-[560px] bg-chapterOneLightBlue rounded-2xl border-1.6 border-chapterOneBlue mt-[200px] mb-[120px]">
           <p className="font-extrabold text-5xl">Login</p>
           <p className="font-light mt-4 text-sm">
@@ -120,7 +120,7 @@ function LoginOauth() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

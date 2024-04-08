@@ -4,9 +4,10 @@ import Nav from "./Nav";
 import Package from "./Packages/Package";
 import StandardPackageDesktop from "./Packages/StandardPackageDesktop";
 import StandardPackageTablet from "./Packages/StandardPackageTablet";
+import { HashLink } from "react-router-hash-link";
 function Home() {
   return (
-    <div className=" font-sora text-black">
+    <div className=" font-sora text-black z-10">
       {/* HERO SECTION */}
       <div className=" bg-chapterOneLightBlue flex-col flex items-center pt-20 justify-center">
         <div className="overflow-hidden relative w-full flex flex-col items-center lg:items-center">
@@ -29,9 +30,12 @@ function Home() {
                 Powered by AI.
               </p>
             </div>
-            <button className="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden">
+            <HashLink
+              to="/#packages"
+              className="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden"
+            >
               View Packages
-            </button>
+            </HashLink>
             <img
               src="hero-image.svg"
               alt=""
@@ -40,7 +44,10 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="flex-col mb-20 flex justify-center items-center relative bg-white z-[20]">
+      <div
+        className="flex-col mb-20 flex justify-center items-center relative bg-white z-[20]"
+        id="how-it-works"
+      >
         <p className="text-[32px] font-extrabold pt-28 max-w-[336px] lg:text-[40px]">
           How it works
         </p>
@@ -52,22 +59,28 @@ function Home() {
           alt=""
           className="w-[336px] rounded-lg lg:w-[820px]"
         />
-        <a
-          href=""
+        <HashLink
+          to="/#packages"
           className="text-chapterOneBlue text-sm font-semibold mt-6 lg:hidden"
         >
           View Packages
-        </a>
-        <button className=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block lg:w-[368px]">
+        </HashLink>
+        <HashLink
+          to="/#packages"
+          className=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block lg:w-[368px]"
+        >
           View Packages
-        </button>
+        </HashLink>
         <div className=" bg-chapterOneLightBlue absolute h-52 top-[356px] w-[100%] -z-10 lg:h-[545px]"></div>
       </div>
 
       {/* OUR PACKAGES SECTION */}
       {/* packageID, title, price, description */}
 
-      <div className="flex-col mb-20 flex justify-center items-center relative ">
+      <div
+        className="flex-col mb-20 flex justify-center items-center relative "
+        id="packages"
+      >
         <p className="text-[32px] font-extrabold pt-24 max-w-[336px] lg:text-[40px]">
           Our packages
         </p>
