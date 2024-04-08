@@ -122,8 +122,8 @@ const FileUpload = () => {
       },
       body: formData,
     })
-      .then((response) => console.log(response))
-      // .then((response) => response.json()) // parse the response as text
+      // .then((response) => console.log(response))
+      .then((response) => response.json()) // parse the response as text
       .then((data) => {
         setResponseObject(data);
       })
