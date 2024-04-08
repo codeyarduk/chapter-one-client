@@ -115,7 +115,7 @@ const FileUpload = () => {
     const credential = Cookies.get("credential");
     setFileUploaded(true);
 
-    fetch("https://chapteroneai.com/api/upload", {
+    fetch(`${process.env.REACT_APP_BASE_URL}/api/upload`, {
       method: "POST",
       headers: {
         Authorization: credential,
@@ -191,11 +191,30 @@ const FileUpload = () => {
           </div>
           <div className="w-full bg-white flex justify-center flex-col items-center">
             <div className="w-small bg-white mt-[104px]">
-              <p className="text-2xl font-extrabold mb-4">
-                Work Experience Analysis
+              <p className="text-2xl font-extrabold mb-4">Formatting</p>
+              <p>
+                Here, we are just going to go over the 6 most important things
+                when it comes the formatting of your resume. Going over each one
+                and giving accurate suggestions based upon your resume,
+                outlining what you can improve upon and what specific changes
+                you can make to improve the formatting.
               </p>
-              <p>{responseObject.ats_formatting}</p>
-              <p>{}</p>
+              <p className="font-bold mb-4 mt-16">Distinct Section Headings</p>
+              <p>{responseObject.distinct_section_headings}</p>
+              <p className="font-bold mb-4 mt-16">Logical Section Flow</p>
+              <p>{responseObject.logical_section_flow}</p>
+              <p className="font-bold mb-4 mt-16">
+                Separation of Past Work Experience
+              </p>
+              <p>{responseObject.separation_of_past_work_experience}</p>
+              <p className="font-bold mb-4 mt-16">Skill Categorization</p>
+              <p>{responseObject.skill_categorization}</p>
+              <p className="font-bold mb-4 mt-16">
+                Clarity in Educational Background
+              </p>
+              <p>{responseObject.clarity_in_educational_background}</p>
+              <p className="font-bold mb-4 mt-16">Additional Sections</p>
+              <p>{responseObject.additional_sections}</p>
             </div>
           </div>
         </div>
