@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, CSSProperties } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { ClimbingBoxLoader } from "react-spinners";
 import axios from "axios";
 import "./App.css";
 import Cookies from "js-cookie";
@@ -21,6 +21,13 @@ const FileUpload = () => {
 
   const [responseObject, setResponseObject] = useState({});
 
+  let [color, setColor] = useState("#141359");
+
+  const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: { color },
+  };
   // COOKIES USER v
 
   const navigate = useNavigate();
@@ -99,6 +106,11 @@ const FileUpload = () => {
   };
 
   const onFileUpload = () => {
+    if (!file) {
+      alert("Please upload a file");
+      return;
+    }
+
     setIsLoading(true);
     const formData = new FormData();
     formData.append("file", file);
@@ -106,7 +118,7 @@ const FileUpload = () => {
     const credential = Cookies.get("credential");
     setFileUploaded(true);
 
-    fetch("http://localhost:3000/api/upload", {
+    fetch("https://chapteroneai.com/api/upload", {
       method: "POST",
       headers: {
         Authorization: credential,
@@ -132,7 +144,16 @@ const FileUpload = () => {
   return (
     <div>
       {isLoading ? (
-        <p>Loading...</p>
+        <div className="min-h-screen flex items-center pb-[300px] justify-center">
+          <ClimbingBoxLoader
+            color={color}
+            loading={isLoading}
+            cssOverride={override}
+            size={15}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
       ) : (
         <div className="flex flex-col min-h-screen">
           {jobTitle && !fileUploaded && (
