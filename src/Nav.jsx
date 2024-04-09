@@ -2,10 +2,24 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import Cookies from "js-cookie";
 
 function Nav() {
+  const credential = Cookies.get("credential");
+
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  function clearCookies() {
+    const cookies = document.cookie.split(";");
+
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i];
+      const eqPos = cookie.indexOf("=");
+      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+  }
 
   useEffect(() => {
     if (isOpen) {
@@ -55,6 +69,17 @@ function Nav() {
                 Sign up
               </button>
             </Link>
+            <Link to="/">
+              <button
+                className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue"
+                onClick={() => {
+                  clearCookies();
+                  navigate("/");
+                }}
+              >
+                Sign out
+              </button>
+            </Link>
           </div>
         </div>
       )}
@@ -89,14 +114,37 @@ function Nav() {
           <button onClick={() => navigate("/")}>Home</button>
         </div>
         <div className="hidden xl:block">
-          <button
-            onClick={() => {
-              navigate("/login");
-            }}
-            className="py-[11px] mt-[92px] mb-24 w-[240px] text-center text-white rounded-[10px] bg-chapterOneBlue"
-          >
-            Login or Sign up
-          </button>
+          {credential ? (
+            <div className="flex flex-row">
+              <p
+                className="text-black font-bold hover:cursor-pointer"
+                onClick={() => {
+                  clearCookies();
+                  navigate("/");
+                }}
+              >
+                Sign out
+              </p>
+
+              <button
+                onClick={() => {
+                  navigate("/profile");
+                }}
+                className="pl-[32px] flex justify-end font-bold text-center text-chapterOneBlue"
+              >
+                <p>My Account</p>
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => {
+                navigate("/login");
+              }}
+              className="py-[11px] mt-[92px] mb-24 w-[240px] text-center text-white rounded-[10px] bg-chapterOneBlue"
+            >
+              Login or Sign up
+            </button>
+          )}
         </div>
       </div>
       <div className="hidden">
