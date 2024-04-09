@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Footer() {
   return (
@@ -8,8 +10,9 @@ function Footer() {
           <p className="text-lg font-extrabold mb-3 lg:text-base xl:text-lg">
             Quick links
           </p>
-          <a href="">Our packages</a>
-          <a href="">How it works</a>
+
+          <HashLink to="/#packages">Our packages</HashLink>
+          <HashLink to="/#how-it-works">How it works</HashLink>
           <a href="">Contact us</a>
         </div>
 
@@ -33,12 +36,12 @@ function Footer() {
           <p className="text-lg font-extrabold mb-3 lg:text-base xl:text-lg">
             Take action
           </p>
-          <a href="" className="underline">
+          <Link to="/login" className="underline">
             Login
-          </a>
-          <a href="" className="underline">
-            Signup
-          </a>
+          </Link>
+          <Link to="/register" className="underline">
+            Sign up
+          </Link>
         </div>
       </div>
       <p className="text-2xl font-extrabold mb-20 mt-28">Chapter One</p>

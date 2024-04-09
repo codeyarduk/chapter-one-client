@@ -14,9 +14,12 @@ function Profile() {
   const email = user?.email;
   const firstName = user?.name;
   const lastName = user?.lastName;
+
   // const uses = user?.uses;
 
-  const [uses, setUses] = useState(1);
+  const [uses, setUses] = useState(0);
+  const [used, setUsed] = useState(0);
+  const [reviews, setReviews] = useState([{}]);
 
   console.log("THIS IS: " + credential);
 
@@ -40,7 +43,38 @@ function Profile() {
         console.log(data);
         const jsonData = JSON.parse(data);
         setUses(jsonData.uses);
+        setUsed(jsonData.used);
         return data;
+      });
+  };
+
+  const getReviews = () => {
+    console.log(email);
+    console.log(credential);
+
+    fetch("https://chapteroneai.com/api/reviews/", {
+      method: "POST",
+      headers: {
+        Authorization: credential,
+      },
+      body: JSON.stringify({
+        email: email,
+        user: credential,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setReviews(data);
+
+        console.log(data[0].id);
+
+        setReviews(data);
+        console.log(reviews[0].id);
+        return data;
+        // console.log(JSON.parse(reviews[0]));
+        // const jsonData = JSON.parse(data);
+        // setUses(jsonData.uses);
+        // return data;
       });
   };
 
@@ -49,6 +83,7 @@ function Profile() {
       navigate("/login");
     }
     getUses();
+    getReviews();
     // /api/users/uses/:email
   }, []);
 
@@ -74,7 +109,7 @@ function Profile() {
           <div className="mt-20 xl:mt-0 w-small xl:w-fit flex flex-row justify-between">
             <div className="border-1.6 rounded-xl border-chapterOneLightBlue">
               <p className="text-sm text-center w-[162px] py-[14px]">
-                Reviews used: {uses}
+                Reviews used: {used}
               </p>
             </div>
             {/* Reviews left */}
@@ -128,23 +163,55 @@ function Profile() {
             <p className="font-light mt-2">All past reviews I've received</p>
           </div>
           {/* Past reviews list */}
-          <div className=" xl:mt-16 mt-12 xl:w-extraLarge flex items-center justify-center rounded-2xl xl:bg-chapterOneLightBlue">
-            <div className="h-[53px] flex justify-center items-center mt-2 xl:mt-0 w-small lg:w-large rounded-xl bg-chapterOneLightBlue">
-              <p className="text-sm text-chapterOneRed font-light">
-                You have no past reviews
-              </p>
+          {reviews && reviews.length > 0 && (
+            <div className="xl:mt-16 mt-12 mb-[200px]">
+              {reviews.map((review) => (
+                <div className="mt-2 w-small lg:w-large xl:w-extraLarge flex items-center justify-center rounded-2xl  bg-chapterOneLightBlue">
+                  <div className="h-[59px] flex justify-between items-center  xl:mt-0 w-[272px] lg:w-[696px] xl:w-[1016px]  ">
+                    <p className="font-regular">{review.date}</p>
+                    <p
+                      className="font-semibold text-chapterOneBlue hover:cursor-pointer underline"
+                      onClick={() => {
+                        navigate("/review", {
+                          state: {
+                            responseObject: review.review,
+                            name: firstName,
+                          },
+                        });
+                      }}
+                    >
+                      View
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
+          )}
+
+          {reviews.length < 1 && (
+            <div>
+              <div className="xl:mt-16 mt-12">
+                <div className="  xl:w-extraLarge flex items-center justify-center rounded-2xl xl:bg-chapterOneLightBlue">
+                  <div className="h-[53px] flex justify-center items-center mt-2 xl:mt-0 w-small lg:w-large rounded-xl bg-chapterOneLightBlue">
+                    <p className="text-sm text-chapterOneRed font-light">
+                      You have no past reviews
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-10 xl:w-extraLarge lg:w-large font-medium text-chapterOneBlue flex justify-end underline mb-[160px]">
+                {uses ? (
+                  <button onClick={() => navigate("/upload")}>
+                    Lets change that
+                  </button>
+                ) : (
+                  <HashLink to="/#packages">Lets change that</HashLink>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Lets change that */}
-          <div className="mt-10 xl:w-extraLarge lg:w-large font-medium text-chapterOneBlue flex justify-end underline mb-[160px]">
-            {uses ? (
-              <button onClick={() => navigate("/upload")}>
-                Lets change that
-              </button>
-            ) : (
-              <HashLink to="/#packages">Lets change that</HashLink>
-            )}
-          </div>
         </div>
       </div>
       {/* Footer */}

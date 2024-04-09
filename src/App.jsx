@@ -9,6 +9,8 @@ import Profile from "./Profile";
 import Packages from "./Packages";
 import CookieConsent from "./CookiesConsent.jsx";
 import CookiesPolicy from "./CookiesPolicy.jsx";
+import OldReview from "./OldReview.jsx";
+
 function App() {
   return (
     <>
@@ -21,6 +23,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
+        <Route path="/review" element={<OldReview />} />
       </Routes>
       <CookieConsent />
     </>

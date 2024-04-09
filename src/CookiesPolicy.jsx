@@ -1,9 +1,10 @@
 import React from "react";
+import Footer from "./Footer";
 
 function CookiesPolicy() {
   return (
     <div className="flex pt-[72px] bg-chapterOneLightBlue justify-center flex-col items-center font-sora">
-      <div className="w-small lg:w-[816px] xl:w-extraLarge mt-[104px]">
+      <div className="w-small pb-[144px] lg:w-[816px] xl:w-extraLarge mt-[104px]">
         <p className="text-2xl font-extrabold mb-4 xl:text-3.5xl">
           Cookies policy
         </p>
@@ -65,6 +66,7 @@ function CookiesPolicy() {
           Policy was last updated on 8th April 2024.
         </p>
       </div>
+      <Footer />
     </div>
   );
 }
