@@ -1,10 +1,10 @@
 import React from "react";
 import Footer from "./Footer";
-import Nav from "./Nav";
 import Package from "./Packages/Package";
 import StandardPackageDesktop from "./Packages/StandardPackageDesktop";
 import StandardPackageTablet from "./Packages/StandardPackageTablet";
 import { HashLink } from "react-router-hash-link";
+
 function Home() {
   return (
     <div className=" font-sora text-black z-10">
@@ -91,10 +91,8 @@ function Home() {
           <Package
             packageID={1}
             title={"Basic"}
-            price={"49"}
-            description={
-              "Receive up to 5 comprehensive resume reviews and analyses."
-            }
+            price={"9.95"}
+            description={"Receive 1 comprehensive resume reviews and analyses."}
           />
           {/* Standard Package */}
           <StandardPackageDesktop packageID={2} />
@@ -102,10 +100,8 @@ function Home() {
           <Package
             packageID={3}
             title={"Premium"}
-            price={"149"}
-            description={
-              "Receive up to 100 comprehensive resume reviews and analyses."
-            }
+            price={"29.95"}
+            description={"Receive 5 comprehensive resume reviews and analyses."}
           />
         </div>
         {/* Standard Package (Tablet View Only) */}
