@@ -38,11 +38,20 @@ function Nav() {
         >
           {/* Add your menu items here */}
           <div className="w-small flex flex-col items-center absolute pt-[100px]">
-            <Link to="/">
-              <button className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue">
-                Home
-              </button>
-            </Link>
+            {credential ? (
+              <Link to="/profile">
+                <button className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue">
+                  Profile
+                </button>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <button className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue">
+                  Login
+                </button>
+              </Link>
+            )}
+
             <HashLink to="/#packages">
               <button className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue">
                 Our packages
@@ -56,30 +65,30 @@ function Nav() {
                 How it works
               </button>
             </HashLink>
-            <Link to="/login">
-              <button
-                onClick={() => navigate("/#how-it-works")}
-                className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue"
-              >
-                Login
-              </button>
-            </Link>
-            <Link to="/register">
-              <button className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue">
-                Sign up
-              </button>
-            </Link>
-            <Link to="/">
-              <button
-                className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue"
-                onClick={() => {
-                  clearCookies();
-                  navigate("/");
-                }}
-              >
-                Sign out
-              </button>
-            </Link>
+            {credential ? (
+              <Link to="/">
+                <button
+                  className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue"
+                  onClick={() => {
+                    clearCookies();
+                    navigate("/");
+                  }}
+                >
+                  Sign out
+                </button>
+              </Link>
+            ) : (
+              <Link to="/register">
+                <button
+                  className="h-[51px] w-screen hover:bg-chapterOneSuperLightBlue active:bg-chapterOneLightBlue"
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  Sign up
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       )}
