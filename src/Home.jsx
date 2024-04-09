@@ -76,7 +76,7 @@ function Home() {
 
       {/* OUR PACKAGES SECTION */}
       <div
-        className="flex-col mb-20 flex justify-center items-center relative "
+        className="flex-col mb-[160px] flex justify-center items-center relative "
         id="packages"
       >
         <p className="text-[32px] font-extrabold pt-24 max-w-[336px] lg:text-[40px]">

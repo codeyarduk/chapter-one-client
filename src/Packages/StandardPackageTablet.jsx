@@ -61,15 +61,15 @@ function Package({ packageID, title, price, description }) {
       });
   };
   return (
-    <div className="mx-2 w-[336px] h-[400px] bg-chapterOneBlue flex-col text-center items-center text-chapterOneLightBlue rounded-xl mt-6 hidden lg:w-[400px] lg:h-[474px] lg:flex xl:hidden">
+    <div className="mx-2 w-[336px] h-[400px] border-1.6 border-chapterOneBlue bg-chapterOneLightBlue flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-6 hidden lg:w-[400px] lg:h-[474px] lg:flex xl:hidden">
       <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20">
         Standard
       </p>
-      <p className="font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14">
+      <p className="text-chapterOneBlue font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14">
         £14.95
       </p>
-      <div className=" flex justify-center">
-        <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
+      <div className="flex justify-center">
+        <p className="text-chapterOneBlue font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
           Receive 2 comprehensive resume reviews and analyses.
         </p>
       </div>
