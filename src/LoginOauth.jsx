@@ -100,9 +100,9 @@ function LoginOauth() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow font-sora w-full flex justify-center flex-col items-center">
-        <div className="flex justify-center flex-col items-center h-[500px] w-[560px] bg-chapterOneLightBlue rounded-2xl border-1.6 border-chapterOneBlue mt-[200px] mb-[120px]">
-          <p className="font-extrabold text-5xl">Login</p>
-          <p className="font-light mt-4 text-sm">
+        <div className="w-small flex justify-center flex-col items-center h-[500px] lg:w-[560px] bg-chapterOneLightBlue rounded-2xl border-1.6 border-chapterOneBlue mt-[200px] mb-[120px]">
+          <p className="font-extrabold text-3.5xl lg:text-5xl">Login</p>
+          <p className="w-[240px] text-center lg:w-full font-light mt-4 text-sm">
             Login to your existing Chapter One account
           </p>
           <div id="signInDiv" className="my-12"></div>
