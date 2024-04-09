@@ -66,10 +66,10 @@ function Package({ packageID, title, price, description }) {
         Standard
       </p>
       <p className="font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14 xl:text-[64px]">
-        £99
+        £14.95
       </p>
       <p className="font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
-        Receive up to 25 comprehensive resume reviews and analyses.
+        Receive 2 comprehensive resume reviews and analyses.
       </p>
       <button
         onClick={loadStripe}
