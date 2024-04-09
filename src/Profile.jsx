@@ -93,7 +93,7 @@ function Profile() {
 
   return (
     <>
-      <div className="pt-[216px] lg:pt-extraLarge flex flex-col items-center justify-center font-sora">
+      <div className="pt-[144px] lg:pt-extraLarge flex flex-col items-center justify-center font-sora">
         {/* Welcome User Section */}
         <div className="flex items-center lg:h-[83px] flex-col w-small lg:w-large lg:flex-row xl:w-extraLarge justify-between lg:items-end">
           <div className="">
@@ -152,13 +152,13 @@ function Profile() {
             </div>
           )}
         </div>
-        <div className="mt-12 lg:w-large xl:w-extraLarge flex justify-start lg:mt-6">
+        <div className="mt-12 lg:w-large  xl:w-extraLarge flex justify-start lg:mt-6">
           <p>Powered by AI.</p>
         </div>
         {/* My past reviews */}
-        <div className="mt-200 w-full flex flex-col items-center justify-center bg-chapterOneSuperLightBlue">
+        <div className="mt-20 lg:mt-200 w-full flex flex-col items-center justify-center bg-chapterOneSuperLightBlue">
           {/* My past reviews text */}
-          <div className="flex flex-col mt-[120px] xl:w-extraLarge">
+          <div className="flex flex-col mt-[120px] lg:mt-[120px] xl:w-extraLarge">
             <p className="font-extrabold text-2.5xl">My past reviews</p>
             <p className="font-light mt-2">All past reviews I've received</p>
           </div>
