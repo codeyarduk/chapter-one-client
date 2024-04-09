@@ -158,7 +158,7 @@ function Profile() {
           </div>
           {/* Past reviews list */}
           {reviews && reviews.length > 0 && (
-            <div className="xl:mt-16 mt-12 mb-[200px]">
+            <div className="xl:mt-16 mt-12 mb-[120px] xl:mb-[136px]">
               {reviews.map((review, index) => (
                 <div
                   key={index}
