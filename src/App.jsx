@@ -10,10 +10,25 @@ import Packages from "./Packages";
 import CookieConsent from "./CookiesConsent.jsx";
 import CookiesPolicy from "./CookiesPolicy.jsx";
 import OldReview from "./OldReview.jsx";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Chapter One</title>
+        <meta
+          name="description"
+          content="Refine your CV with the power of AI"
+        />
+        <meta name="author" content="Chapter One" />
+        <meta
+          name="keywords"
+          content="resume, cv, optimise, improve, hiring, recruiter, service"
+        />
+        <meta name="robots" content="index" />
+      </Helmet>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
