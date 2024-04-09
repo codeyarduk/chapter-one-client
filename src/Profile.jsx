@@ -13,21 +13,19 @@ function Profile() {
   const user = userCookie ? JSON.parse(userCookie) : null;
   const email = user?.email;
   const firstName = user?.name;
-  const lastName = user?.lastName;
-
-  // const uses = user?.uses;
-
   const [uses, setUses] = useState(0);
   const [used, setUsed] = useState(0);
-  const [reviews, setReviews] = useState([{}]);
-
-  console.log("THIS IS: " + credential);
+  const [reviews, setReviews] = useState([]);
 
   const getUses = () => {
-    console.log(email);
-    console.log(credential);
-    // http://138.68.181.103:3000
     // http://localhost:3000
+    // https://chapteroneai.com
+
+    if (!email) {
+      navigate("/login");
+      return null;
+    }
+
     fetch("https://chapteroneai.com/api/users/uses/" + email, {
       method: "POST",
       headers: {
@@ -40,7 +38,6 @@ function Profile() {
     })
       .then((response) => response.text())
       .then((data) => {
-        console.log(data);
         const jsonData = JSON.parse(data);
         setUses(jsonData.uses);
         setUsed(jsonData.used);
@@ -49,8 +46,10 @@ function Profile() {
   };
 
   const getReviews = () => {
-    console.log(email);
-    console.log(credential);
+    if (!email) {
+      navigate("/login");
+      return null;
+    }
 
     fetch("https://chapteroneai.com/api/reviews/", {
       method: "POST",
@@ -65,16 +64,11 @@ function Profile() {
       .then((response) => response.json())
       .then((data) => {
         setReviews(data);
-
-        console.log(data[0].id);
-
-        setReviews(data);
-        console.log(reviews[0].id);
         return data;
-        // console.log(JSON.parse(reviews[0]));
-        // const jsonData = JSON.parse(data);
-        // setUses(jsonData.uses);
-        // return data;
+      })
+      .catch((error) => {
+        navigate("/login");
+        console.error("Error: " + error);
       });
   };
 
@@ -84,10 +78,10 @@ function Profile() {
     }
     getUses();
     getReviews();
-    // /api/users/uses/:email
   }, []);
 
   if (!user) {
+    navigate("/login");
     return null; // Don't render the component
   }
 
@@ -165,8 +159,11 @@ function Profile() {
           {/* Past reviews list */}
           {reviews && reviews.length > 0 && (
             <div className="xl:mt-16 mt-12 mb-[200px]">
-              {reviews.map((review) => (
-                <div className="mt-2 w-small lg:w-large xl:w-extraLarge flex items-center justify-center rounded-2xl  bg-chapterOneLightBlue">
+              {reviews.map((review, index) => (
+                <div
+                  key={index}
+                  className="mt-2 w-small lg:w-large xl:w-extraLarge flex items-center justify-center rounded-2xl  bg-chapterOneLightBlue"
+                >
                   <div className="h-[59px] flex justify-between items-center  xl:mt-0 w-[272px] lg:w-[696px] xl:w-[1016px]  ">
                     <p className="font-regular">{review.date}</p>
                     <p
