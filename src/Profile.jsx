@@ -26,7 +26,7 @@ function Profile() {
       return null;
     }
 
-    fetch("https://chapteroneai.com/api/users/uses/" + email, {
+    fetch("http://localhost:3000/api/users/uses/" + email, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function Profile() {
       return null;
     }
 
-    fetch("https://chapteroneai.com/api/reviews/", {
+    fetch("http://localhost:3000/api/reviews/", {
       method: "POST",
       headers: {
         Authorization: credential,

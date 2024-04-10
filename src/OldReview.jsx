@@ -1,10 +1,14 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import Rating from "./Rating";
 function OldReview() {
   const location = useLocation();
   console.log(location);
   const responseObject = location.state?.responseObject;
   const firstName = location.state?.name;
+
+  const rating = parseInt(responseObject.formatting_rating[0]);
+
   return (
     <div className="flex pt-[72px] bg-chapterOneLightBlue justify-center flex-col items-center font-sora">
       <div className="w-full h-[344px] lg:h-[312px] xl:h-[442px] flex justify-center items-center bg-chapterOneLightBlue">
@@ -13,7 +17,9 @@ function OldReview() {
         </p>
       </div>
       {/* SECTION ONE: FORMATTING */}
+
       <div className="w-full bg-white flex justify-center py-[104px] flex-col items-center">
+        <Rating rating={rating} />
         <div className="w-small lg:w-[816px] xl:w-extraLarge ">
           <p className="text-2xl font-extrabold mb-4 xl:text-3.5xl">
             Formatting
