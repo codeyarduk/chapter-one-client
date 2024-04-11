@@ -56,11 +56,20 @@ function Home() {
         <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[600px]">
           Watch our video to understand the process of how we work
         </p>
-        <img
+        {/* <img
           src="temp_video.png"
           alt=""
           className="w-[336px] rounded-lg lg:w-[820px]"
-        />
+        /> */}
+        <iframe
+          className="w-[336px] h-[189px] lg:w-[820px] lg:h-[461px] border-0 rounded-lg"
+          src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
         <HashLink
           to="/#packages"
           className="text-chapterOneBlue text-sm font-semibold mt-6 lg:hidden"
