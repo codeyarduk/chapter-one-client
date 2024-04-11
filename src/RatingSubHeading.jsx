@@ -61,12 +61,9 @@ function Rating({
         <p className="font-extrabold text-2xl pt-7 lg:text-[28px] lg:pt-11 xl:text-[32px]  xl:pt-16">
           {sectionTitle}
         </p>
-        <p className="text-sm font-light pt-3 lg:pt-5 xl:pt-6">
-          {sectionContent}
-        </p>
 
         {/* MOBILE */}
-        <div className="h-28 w-[336px] bg-chapterOneBlue mt-9 rounded-lg lg:hidden">
+        <div className="h-28 w-[336px] bg-chapterOneSuperLightBlue border-1.6 border-chapterOneLightBlue mt-9 rounded-lg lg:hidden">
           <div className="ml-6 pt-6 flex flex-row justify-between w-[175px]">
             {arr.map((colour) => {
               return (
@@ -74,15 +71,15 @@ function Rating({
               );
             })}
           </div>
-          <p className="ml-6 pt-4 w-[287px] font-bold text-sm text-white leading-[16.8px]">
+          <p className="ml-6 pt-4 w-[220px] text-sm text-black leading-[16.8px]">
             {sectionBoxText} {rating}/10
           </p>
         </div>
         {/* MOBILE */}
 
         {/* TABLET AND DESKTOP */}
-        <div className="h-16 w-[816px] bg-chapterOneBlue mt-9 rounded-lg hidden lg:flex flex-row justify-between xl:w-[1136px] xl:mt-10">
-          <p className="ml-8 font-bold text-sm text-white leading-[16.8px] mt-6">
+        <div className="h-16 w-[816px] bg-chapterOneSuperLightBlue border-1.6 border-chapterOneLightBlue mt-9 rounded-lg hidden lg:flex flex-row justify-between xl:w-[1136px] xl:mt-10">
+          <p className="ml-8 text-sm text-black leading-[16.8px] mt-6">
             {sectionBoxText} {rating}/10
           </p>
           <div className="mr-8 text-sm flex flex-row justify-between w-[194px] mt-6">
