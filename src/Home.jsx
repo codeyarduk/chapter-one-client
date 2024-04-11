@@ -94,8 +94,8 @@ function Home() {
           <Package
             packageID={1}
             title={"Basic"}
-            price={"9.95"}
-            description={"Receive 1 comprehensive resume reviews and analyses."}
+            price={"4.95"}
+            description={"Receive 1 comprehensive resume review and analysis."}
           />
           {/* Standard Package */}
           <StandardPackageDesktop packageID={2} />
@@ -103,7 +103,7 @@ function Home() {
           <Package
             packageID={3}
             title={"Premium"}
-            price={"29.95"}
+            price={"19.95"}
             description={"Receive 5 comprehensive resume reviews and analyses."}
           />
         </div>
