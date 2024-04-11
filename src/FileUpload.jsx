@@ -223,11 +223,13 @@ const FileUpload = () => {
                     {firstName}, here's an outline of what's coming
                   </p>
                   <p className="text-center mt-4 lg:mt-5">
-                    This review consists of four sections: three focus on
-                    specific areas of your resume that can be improved, while
-                    the fourth serves as the conclusion. Within each of the
-                    three sections, you'll find an overview, six implementable
-                    changes, and closing feedback.
+                    This review consists of four sections: the first section
+                    provides an overall rating of how good your resume is for
+                    the job you are looking to get, the other three focus on
+                    specific areas of your resume that can be improved. Within
+                    each of the three sections, you'll find six sub headings
+                    that will outline where you can implement changes to better
+                    your resume.
                   </p>
                   <p></p>
                 </div>
@@ -315,7 +317,7 @@ const sectionBoxText = "Overall, your resume received a rating of ";
                   sectionTitle="Goal Alignment"
                   sectionContent={""}
                   sectionBoxText={
-                    "The formatting of your resume received a rating of"
+                    "The goal alignment of your resume received a rating of"
                   }
                 />
                 <div className="w-small lg:w-[816px] xl:w-extraLarge ">
@@ -383,7 +385,7 @@ const sectionBoxText = "Overall, your resume received a rating of ";
                   sectionTitle="Keyword Optimisation and ATS Compatibility"
                   sectionContent={""}
                   sectionBoxText={
-                    "The formatting of your resume received a rating of"
+                    "The keyword optimisation of your resume received a rating of"
                   }
                 />
                 <div className="w-small lg:w-[816px] xl:w-extraLarge ">
@@ -450,21 +452,16 @@ const sectionBoxText = "Overall, your resume received a rating of ";
                   Conclusion
                 </p>
                 <p className="mt-7 font-light">
-                  In conclusion, this comprehensive review has provided
-                  invaluable insights into optimising your resume for success in
-                  today's dynamic job market. By strategically enhancing your
-                  work experience section, aligning with industry trends, and
-                  implementing tailored strategies, you're poised to stand out
-                  as a top candidate. Whether quantifying achievements,
-                  showcasing relevant skills, or offering innovative solutions,
-                  each aspect of your resume has been meticulously crafted to
-                  maximise impact and effectiveness.
+                  Thank you for using our resume analysis tool. Our goal is to
+                  empower you with insights that can help you refine your resume
+                  and stand out in your job search. We hope that the feedback
+                  provided has been valuable in highlighting areas of strength
+                  and opportunities for improvement. Remember, a well-crafted
+                  resume is just the first step in your professional journey.
+                  Keep learning, keep improving, and keep striving for your
+                  goals.
                 </p>
-                <p className="mt-4 font-light">
-                  With these enhancements, you're well-equipped to navigate the
-                  competitive landscape with confidence and secure your desired
-                  career opportunities.
-                </p>
+                <p className="mt-4 font-light"></p>
                 <p className="mt-4 font-light">Warm regards, Chapter One.</p>
                 <p></p>
               </div>
