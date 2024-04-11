@@ -14,6 +14,10 @@ export default {
         chapterOneDarkBlue: "#141359",
         chapterOneSuperLightBlue: "#F7F6FB",
         chapterOneRed: "#D91212",
+        rating123: "#F61E1E",
+        rating45: "#FB7513",
+        rating67: "#FFD02A",
+        rating810: "#16D429",
       },
       fontSize: {
         "2.5xl": "1.75rem",

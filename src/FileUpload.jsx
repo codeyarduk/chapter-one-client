@@ -7,6 +7,8 @@ import Cookies from "js-cookie";
 import Footer from "./Footer";
 import FileUploadSection from "./Upload Components/FileUploadSection";
 import JobSpecification from "./Upload Components/JobSpec";
+import Rating from "./Rating";
+import RatingSubHeading from "./RatingSubHeading";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
@@ -59,6 +61,17 @@ const FileUpload = () => {
   const [fileName, setFileName] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
+
+  // const formatRating = parseInt(responseObject.formatting_rating[0]);
+  // const goalRating = parseInt(responseObject.goal_alignment_rating[0]);
+  // const keyWordRating = parseInt(responseObject.key_word_rating[0]);
+  // const overallRating = Math.round(
+  //   (formatRating + goalRating + keyWordRating) / 3
+  // );
+  const [formatRating, setFormatRating] = useState(0);
+  const [goalRating, setGoalRating] = useState(0);
+  const [keyWordRating, setKeyWordRating] = useState(0);
+  const [overallRating, setOverallRating] = useState(0);
 
   const handleFileUpload = () => {
     fileInput.current.click();
@@ -118,7 +131,7 @@ const FileUpload = () => {
     const credential = Cookies.get("credential");
     setFileUploaded(true);
 
-    fetch("https://chapteroneai.com/api/upload", {
+    fetch("http://localhost:3000/api/upload", {
       method: "POST",
       headers: {
         Authorization: credential,
@@ -129,6 +142,27 @@ const FileUpload = () => {
       .then((response) => response.json()) // parse the response as text
       .then((data) => {
         setResponseObject(data);
+        setFormatRating(parseInt(data.formatting_rating[0]));
+        setGoalRating(parseInt(data.goal_alignment_rating[0]));
+        setKeyWordRating(parseInt(data.key_word_rating[0]));
+        const overallRating = Math.round(
+          (parseInt(data.formatting_rating[0]) +
+            parseInt(data.goal_alignment_rating[0]) +
+            parseInt(data.key_word_rating[0])) /
+            3
+        );
+        setOverallRating(overallRating);
+
+        // const formatRating = parseInt(responseObject.formatting_rating[0]);
+        // const goalRating = parseInt(responseObject.goal_alignment_rating[0]);
+        // const keyWordRating = parseInt(responseObject.key_word_rating[0]);
+        // const overallRating = Math.round(
+        //   (formatRating + goalRating + keyWordRating) / 3
+        // );
+        // const [formatRating, setFormatRating] = useState(0);
+        // const [goalRating, setGoalRating] = useState(0);
+        // const [keyWordRating, setKeyWordRating] = useState(0);
+        // const [overallRating, setOverallRating] = useState(0);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -180,14 +214,55 @@ const FileUpload = () => {
             <div className="flex pt-[72px] bg-chapterOneLightBlue justify-center flex-col items-center font-sora">
               <div className="w-full h-[344px] lg:h-[312px] xl:h-[442px] flex justify-center items-center bg-chapterOneLightBlue">
                 <p className="w-small font-extrabold lg:pb-8 text-center text-5xl xl:text-6xl lg:w-[816px]">
-                  {firstName}, Here's Your Review
+                  {/* {firstName}, Here's Your Review */} Your Resume Review
                 </p>
               </div>
+              <div className="w-full py-[104px] lg:py-36 xl:py-40 flex justify-center items-center bg-white">
+                <div className=" w-small lg:w-[816px] xl:w-extraLarge">
+                  <p className="font-extrabold text-2xl text-center">
+                    {firstName}, here's an outline of what's coming
+                  </p>
+                  <p className="text-center mt-4 lg:mt-5">
+                    This review consists of four sections: three focus on
+                    specific areas of your resume that can be improved, while
+                    the fourth serves as the conclusion. Within each of the
+                    three sections, you'll find an overview, six implementable
+                    changes, and closing feedback.
+                  </p>
+                  <p></p>
+                </div>
+              </div>
+
               {/* SECTION ONE: FORMATTING */}
-              <div className="w-full bg-white flex justify-center py-[104px] flex-col items-center">
+              <Rating
+                rating={overallRating}
+                sectionNumber={"1"}
+                sectionTitle="Let's begin!"
+                sectionContent={
+                  "Starting with the most important statistic, is the overall state of your current resume."
+                }
+                sectionBoxText={"Overall, your resume received a rating of"}
+              />
+              {/* 
+const sectionNumber = "1";
+const sectionTitle = "Let’s begin!";
+const sectionContent =
+  "Starting with the most important statistic, is the overall state of your current resume.";
+const sectionBoxText = "Overall, your resume received a rating of ";
+ */}
+              <div className="w-full bg-white pb-[104px] flex justify-center flex-col items-center">
+                <RatingSubHeading
+                  rating={formatRating}
+                  sectionNumber={"2"}
+                  sectionTitle="Formatting"
+                  sectionContent={""}
+                  sectionBoxText={
+                    "The formatting of your resume received a rating of"
+                  }
+                />
                 <div className="w-small lg:w-[816px] xl:w-extraLarge ">
-                  <p className="text-2xl font-extrabold mb-4 xl:text-3.5xl">
-                    Formatting
+                  <p className="text-xl font-extrabold mb-4 xl:text-2xl">
+                    Overview
                   </p>
                   <p>
                     Here, we are just going to go over the 6 most important
@@ -233,10 +308,19 @@ const FileUpload = () => {
                 </div>
               </div>
               {/* SECTION 2 */}
-              <div className="w-full flex justify-center py-[104px] flex-col items-center">
+              <div className="w-full flex justify-center pb-[104px] flex-col items-center">
+                <RatingSubHeading
+                  rating={goalRating}
+                  sectionNumber={"3"}
+                  sectionTitle="Goal Alignment"
+                  sectionContent={""}
+                  sectionBoxText={
+                    "The formatting of your resume received a rating of"
+                  }
+                />
                 <div className="w-small lg:w-[816px] xl:w-extraLarge ">
-                  <p className="text-2xl font-extrabold mb-4 xl:text-3.5xl">
-                    Goal Alignment
+                  <p className="text-xl font-extrabold mb-4 xl:text-2xl">
+                    Overview
                   </p>
                   <p>
                     Now comes the task of optimising your resume to align with
@@ -292,10 +376,19 @@ const FileUpload = () => {
                 </div>
               </div>
               {/* SECTION THREE: Keyword Optimisation and ATS Compatibility */}
-              <div className="w-full bg-white flex justify-center py-[104px] flex-col items-center">
+              <div className="w-full bg-white flex justify-center pb-[104px] flex-col items-center">
+                <RatingSubHeading
+                  rating={keyWordRating}
+                  sectionNumber={"4"}
+                  sectionTitle="Keyword Optimisation and ATS Compatibility"
+                  sectionContent={""}
+                  sectionBoxText={
+                    "The formatting of your resume received a rating of"
+                  }
+                />
                 <div className="w-small lg:w-[816px] xl:w-extraLarge ">
-                  <p className="text-2xl font-extrabold mb-4 xl:text-3.5xl">
-                    Keyword Optimisation and ATS Compatibility
+                  <p className="text-xl font-extrabold mb-4 xl:text-2xl">
+                    Overview
                   </p>
                   <p>
                     Looking at the keyword optimisation of your resume is

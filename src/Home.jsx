@@ -4,6 +4,7 @@ import Package from "./Packages/Package";
 import StandardPackageDesktop from "./Packages/StandardPackageDesktop";
 import StandardPackageTablet from "./Packages/StandardPackageTablet";
 import { HashLink } from "react-router-hash-link";
+import Rating from "./Rating";
 
 function Home() {
   return (
@@ -30,6 +31,7 @@ function Home() {
                 Powered by AI.
               </p>
             </div>
+
             <HashLink
               to="/#packages"
               className="py-3 mt-16 mb-24 text-sm w-[336px] text-center text-white self-start rounded-[10px] mr-5 bg-chapterOneBlue lg:self-start lg:py-[14px] lg:w-[296px] xl:hidden"
@@ -75,6 +77,7 @@ function Home() {
       </div>
 
       {/* OUR PACKAGES SECTION */}
+
       <div
         className="flex-col mb-[160px] flex justify-center items-center relative "
         id="packages"
