@@ -92,29 +92,28 @@ function Home() {
         id="packages"
       >
         <p className="text-[32px] font-extrabold pt-24 max-w-[336px] lg:text-[40px]">
-          Our packages
+          Pricing
         </p>
         <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[800px]">
-          Check out the range of custom packages we offer to see which suits
-          your needs best!
+
         </p>
         <div className="flex flex-col lg:flex-row">
           {/* Basic Package */}
-          <Package
+          {/* <Package
             packageID={1}
             title={"Basic"}
             price={"4.95"}
             description={"Receive 1 comprehensive resume review and analysis."}
-          />
+          /> */}
           {/* Standard Package */}
           <StandardPackageDesktop packageID={2} />
           {/* Premium Package */}
-          <Package
+          {/* <Package
             packageID={3}
             title={"Premium"}
             price={"19.95"}
             description={"Receive 5 comprehensive resume reviews and analyses."}
-          />
+          /> */}
         </div>
         {/* Standard Package (Tablet View Only) */}
         <StandardPackageTablet packageID={2} />

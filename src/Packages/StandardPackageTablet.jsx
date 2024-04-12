@@ -66,11 +66,11 @@ function Package({ packageID, title, price, description }) {
         Standard
       </p>
       <p className="text-chapterOneBlue font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14">
-        £8.95
+        £1.00
       </p>
       <div className="flex justify-center">
         <p className="text-chapterOneBlue font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
-          Receive 2 comprehensive resume reviews and analyses.
+          Receive one comprehensive resume review and analysis.
         </p>
       </div>
       <button
