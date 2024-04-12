@@ -61,21 +61,21 @@ function Package({ packageID, title, price, description }) {
       });
   };
   return (
-    <div className="mx-2 w-[336px] h-[400px] border-1.6 border-chapterOneBlue bg-chapterOneLightBlue flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-6 hidden lg:w-[400px] lg:h-[474px] lg:flex xl:hidden">
-      <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20">
+    <div className="mx-2 w-[336px] h-[400px] border-1.6 border-chapterOneBlue bg-chapterOneLightBlue flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-6 hidden lg:w-[432px] lg:h-[397px] lg:flex xl:hidden">
+      <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-[75px]">
         Standard
       </p>
-      <p className="text-chapterOneBlue font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-14">
+      <p className="text-chapterOneBlue font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-4">
         £1.00
       </p>
       <div className="flex justify-center">
-        <p className="text-chapterOneBlue font-normal text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
-          Receive one comprehensive resume review and analysis.
+        <p className="text-chapterOneDarkBlue font-light text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-4">
+          One resume review
         </p>
       </div>
       <button
         onClick={loadStripe}
-        className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-white self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10"
+        className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-chapterOneBlue self-center rounded-[10px] text-white  lg:text-base lg:w-[338px] lg:mt-10"
       >
         Buy now
       </button>
