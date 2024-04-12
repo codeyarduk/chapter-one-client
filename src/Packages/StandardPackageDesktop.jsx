@@ -61,19 +61,20 @@ function Package({ packageID, title, price, description }) {
       });
   };
   return (
-    <div className="mx-2 w-[336px] h-[400px] border-1.6 border-chapterOneBlue bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden xl:flex  xl:w-[368px] xl:h-[535px]">
-      <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-20 xl:text-2xl">
+    <div className="mx-2 w-[336px] h-[422px] border-1.6 border-chapterOneBlue bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden xl:flex  xl:w-[572px] xl:h-[459px]">
+      <p className="font-bold text-xl mt-[85px] lg:text-[22px] lg:mt-20 xl:text-2xl">
         Standard
       </p>
-      <p className="font-extrabold text-chapterOneBlue text-5xl mt-10 lg:text-[56px] lg:mt-14 xl:text-[64px]">
+      <p className="font-extrabold text-chapterOneBlue text-5xl mt-10 lg:text-[56px] lg:mt-6 xl:text-[64px]">
         £1.00
       </p>
-      <p className="font-normal text-chapterOneBlue text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-14">
-        Receive one comprehensive resume review and analysis.
+      <p className="text-chapterOneDarkBlue text-sm font-light max-w-72 mt-4 lg:text-[16px] lg:mt-0">
+        {/* Receive one comprehensive resume review and analysis. */}
+        One resume review
       </p>
       <button
         onClick={loadStripe}
-        className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-[#E4DFFA] self-center rounded-[10px] text-chapterOneBlue  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]"
+        className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-chapterOneBlue self-center rounded-[10px] text-white  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]"
       >
         Buy now
       </button>

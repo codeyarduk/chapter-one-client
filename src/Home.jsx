@@ -95,7 +95,7 @@ function Home() {
           Pricing
         </p>
         <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[800px]">
-
+          One pound for one review
         </p>
         <div className="flex flex-col lg:flex-row">
           {/* Basic Package */}
