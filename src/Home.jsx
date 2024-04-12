@@ -13,19 +13,19 @@ function Home() {
       <div className=" bg-chapterOneLightBlue flex-col flex items-center pt-20 justify-center">
         <div className="overflow-hidden relative w-full flex flex-col items-center lg:items-center">
           <div className=" flex-col flex justify-center pl-5 max-w-[377px] lg:max-w-[816px] lg:w-[100%] xl:max-w-[1180px]">
-            <div className=" text-5xl leading-[58px] font-extrabold pt-10 lg:text-[64px] lg:leading-[76px] lg:pt-[108px] xl:text-[72px] xl:leading-[86px]">
-              <p>Hone Your Resume.</p>
+            <div className=" text-5xl leading-[58px] font-extrabold pt-10 lg:text-[58px] lg:leading-[68px] lg:pt-[108px] xl:text-[72px] xl:leading-[86px]">
+              <p>Perfect Your Resume.</p>
               <p>Get The Job.</p>
               <p>Secure Your Future.</p>
             </div>
-            <div className="mt-10 font-sora leading-[19.2px] max-w-[336px] lg:text-lg lg:leading-6 lg:max-w-[640px]">
+            <div className="mt-10 font-sora leading-[19.2px] max-w-[336px] lg:text-lg lg:leading-6 lg:max-w-[640px] xl:max-w-[752px]">
               <p>
                 We provide{" "}
                 <span className="font-semibold">
-                  Implementable Expert Resume Reviews
+                  easy to use in depth resume reviews
                 </span>{" "}
-                that will help you with job application success and standout
-                proficiency.
+                that will help you with job application success, in a highly
+                competitive market. Learn how we do this below.
               </p>
               <p className="pt-5 text-sm lg:text-base xl:mb-36">
                 Powered by AI.
