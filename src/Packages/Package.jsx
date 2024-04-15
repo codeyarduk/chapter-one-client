@@ -7,7 +7,7 @@ function Package({ packageID, title, price, description }) {
   const [decoded, setDecoded] = useState(null);
 
   const navigate = useNavigate();
-  const credential = Cookies.get("user");
+  const credential = Cookies.get("credential");
 
   function stripeCallback(response) {
     console.log(response);
@@ -27,6 +27,7 @@ function Package({ packageID, title, price, description }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: credential,
       },
       body: JSON.stringify({
         item: { id: packageID, quantity: 1 },

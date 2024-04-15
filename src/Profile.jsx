@@ -7,38 +7,27 @@ import Footer from "./Footer";
 
 function Profile() {
   const navigate = useNavigate();
-
   const credential = Cookies.get("credential");
-  const userCookie = Cookies.get("user");
-  const user = userCookie ? JSON.parse(userCookie) : null;
-  const email = user?.email;
-  const firstName = user?.name;
+
   const [uses, setUses] = useState(0);
   const [used, setUsed] = useState(0);
+  const [name, setName] = useState("");
   const [reviews, setReviews] = useState([]);
 
   const getUses = () => {
     // http://localhost:3000
     // https://chapteroneai.com
-
-    if (!email) {
-      navigate("/login");
-      return null;
-    }
-
-    fetch("https://chapteroneai.com/api/users/uses/" + email, {
+    fetch("http://localhost:3000/api/users/uses/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: credential,
       },
-      body: JSON.stringify({
-        email: email,
-        user: credential,
-      }),
     })
       .then((response) => response.text())
       .then((data) => {
         const jsonData = JSON.parse(data);
+        setName(jsonData.name);
         setUses(jsonData.uses);
         setUsed(jsonData.used);
         return data;
@@ -46,20 +35,11 @@ function Profile() {
   };
 
   const getReviews = () => {
-    if (!email) {
-      navigate("/login");
-      return null;
-    }
-
-    fetch("https://chapteroneai.com/api/reviews/", {
+    fetch("http://localhost:3000/api/reviews/", {
       method: "POST",
       headers: {
         Authorization: credential,
       },
-      body: JSON.stringify({
-        email: email,
-        user: credential,
-      }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -73,17 +53,12 @@ function Profile() {
   };
 
   useEffect(() => {
-    if (!credential || !user) {
+    if (!credential) {
       navigate("/login");
     }
     getUses();
     getReviews();
   }, []);
-
-  if (!user) {
-    navigate("/login");
-    return null; // Don't render the component
-  }
 
   return (
     <>
@@ -92,7 +67,7 @@ function Profile() {
         <div className="flex items-center lg:h-[83px] flex-col w-small lg:w-large lg:flex-row xl:w-extraLarge justify-between lg:items-end">
           <div className="">
             <p className="text-6xl font-extrabold xl:text-5xl text-center xl:text-start break-words w-small lg:w-full xl:w-full">
-              Welcome {firstName}!
+              Welcome {name}!
             </p>
             <p className="text-center font-extralight text-sm lg:text-base lg:text-start xl:font-light xl:mt-2">
               Let's get started with refining your resume.
@@ -164,7 +139,7 @@ function Profile() {
                   key={index}
                   className="mt-2 w-small lg:w-large xl:w-extraLarge flex items-center justify-center rounded-2xl  bg-chapterOneLightBlue"
                 >
-                  <div className="h-[59px] flex justify-between items-center  xl:mt-0 w-[272px] lg:w-[696px] xl:w-[1016px]  ">
+                  <div className="h-[59px] flex justify-between items-center xl:mt-0 w-[272px] lg:w-[696px] xl:w-[1016px]  ">
                     <p className="font-regular">{review.date}</p>
                     <p
                       className="font-semibold text-chapterOneBlue hover:cursor-pointer underline"
@@ -172,7 +147,7 @@ function Profile() {
                         navigate("/review", {
                           state: {
                             responseObject: review.review,
-                            name: firstName,
+                            name: name,
                           },
                         });
                       }}
