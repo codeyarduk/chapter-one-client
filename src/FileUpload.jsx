@@ -61,13 +61,6 @@ const FileUpload = () => {
   const [fileName, setFileName] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
-
-  // const formatRating = parseInt(responseObject.formatting_rating[0]);
-  // const goalRating = parseInt(responseObject.goal_alignment_rating[0]);
-  // const keyWordRating = parseInt(responseObject.key_word_rating[0]);
-  // const overallRating = Math.round(
-  //   (formatRating + goalRating + keyWordRating) / 3
-  // );
   const [formatRating, setFormatRating] = useState(0);
   const [goalRating, setGoalRating] = useState(0);
   const [keyWordRating, setKeyWordRating] = useState(0);
@@ -85,8 +78,6 @@ const FileUpload = () => {
   };
 
   // TEST CODE FOR UPLOADING FILE
-
-  // setJobTitle("Software Engineer");
   const handleInputChange = (event) => {
     setTempJobTitle(event.target.value);
   };
@@ -96,7 +87,7 @@ const FileUpload = () => {
     setJobTitle(tempJobTitle);
   };
   useEffect(() => {
-    // setJobTitle("");
+
   }, [jobTitle]);
 
   const onFileChange = (event) => {
@@ -106,7 +97,6 @@ const FileUpload = () => {
       const fileType = file.type;
       const validImageTypes = ["application/pdf"];
       if (!validImageTypes.includes(fileType)) {
-        // alert("Please upload a PDF file");
         setFileTypeValid(false);
         return;
       }
@@ -138,7 +128,6 @@ const FileUpload = () => {
       },
       body: formData,
     })
-      // .then((response) => console.log(response))
       .then((response) => response.json()) // parse the response as text
       .then((data) => {
         setResponseObject(data);
@@ -152,17 +141,6 @@ const FileUpload = () => {
             3
         );
         setOverallRating(overallRating);
-
-        // const formatRating = parseInt(responseObject.formatting_rating[0]);
-        // const goalRating = parseInt(responseObject.goal_alignment_rating[0]);
-        // const keyWordRating = parseInt(responseObject.key_word_rating[0]);
-        // const overallRating = Math.round(
-        //   (formatRating + goalRating + keyWordRating) / 3
-        // );
-        // const [formatRating, setFormatRating] = useState(0);
-        // const [goalRating, setGoalRating] = useState(0);
-        // const [keyWordRating, setKeyWordRating] = useState(0);
-        // const [overallRating, setOverallRating] = useState(0);
         setIsLoading(false);
       })
       .catch((err) => {

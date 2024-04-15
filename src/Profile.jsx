@@ -21,15 +21,16 @@ function Profile() {
     // http://localhost:3000
     // https://chapteroneai.com
 
-    if (!email) {
+    if (!credential) {
       navigate("/login");
       return null;
     }
 
-    fetch("https://chapteroneai.com/api/users/uses/" + email, {
+    fetch("http://localhost:3000/api/users/uses/" + email, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: credential, 
       },
       body: JSON.stringify({
         email: email,
@@ -51,7 +52,7 @@ function Profile() {
       return null;
     }
 
-    fetch("https://chapteroneai.com/api/reviews/", {
+    fetch("http://localhost:3000/api/reviews/", {
       method: "POST",
       headers: {
         Authorization: credential,
@@ -79,11 +80,6 @@ function Profile() {
     getUses();
     getReviews();
   }, []);
-
-  if (!user) {
-    navigate("/login");
-    return null; // Don't render the component
-  }
 
   return (
     <>

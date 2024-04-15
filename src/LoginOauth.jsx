@@ -16,54 +16,29 @@ function LoginOauth() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // const to = location.state?.to;
-  // setToState(location.state?.to);
-
   function handleCallback(response) {
-    // console.log("Encoded JWT ID token: " + response.credential);
-    let userObject = jwt_decode(response.credential);
-    // console.log(userObject);
     sendEmail(response.credential);
     Cookies.set("credential", response.credential, { expires: 7 });
-    setUser(userObject);
   }
 
-  const sendEmail = (userObject) => {
-    fetch("https://chapteroneai.com/api/users/login", {
+  const sendEmail = (credential) => {
+    fetch("http://localhost:3000/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: credential,
       },
-      body: JSON.stringify({
-        user: userObject,
-      }),
+      // body: JSON.stringify({
+      //   user: credential,
+      // }),
     })
       .then((response) => response.text())
       .then((data) => {
-        // const jsonData = JSON.parse(data);
         console.log("v");
-        // console.log(to);
+        console.log(data);
         Cookies.set("user", data, { expires: 7 });
-        console.log(Cookies.get("user"));
-        // console.log(data);
         setOutCome(data);
-
-        // Save the session token in a cookie
-        // Cookies.set("sessionToken", data, { expires: 7 });
-        if (location.state?.to) {
-          // console.log(location.state.to);
-          // window.location.href = location.state.to;
-          navigate("/");
-          return null;
-        }
-        navigate("/profile", {
-          state: {
-            email: userObject.email,
-            firstName: userObject.given_name,
-            lastName: userObject.family_name,
-            uses: 0,
-          },
-        });
+        navigate("/profile");
       })
       .catch((error) => {
         console.error(error);
