@@ -36,7 +36,7 @@ function RegisterOauth() {
       .then((data) => {
         // console.log(data);
         // setOutCome(data);
-        Cookies.set("user", data, { expires: 7 });
+        // Cookies.set("user", data, { expires: 7 });
 
         // Save the session token in a cookie
         // Cookies.set("sessionToken", data, { expires: 7 });

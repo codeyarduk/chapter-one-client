@@ -9,6 +9,7 @@ import FileUploadSection from "./Upload Components/FileUploadSection";
 import JobSpecification from "./Upload Components/JobSpec";
 import Rating from "./Rating";
 import RatingSubHeading from "./RatingSubHeading";
+import { jwtDecode as jwt_decode } from "jwt-decode";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
@@ -35,23 +36,22 @@ const FileUpload = () => {
   const navigate = useNavigate();
 
   const credential = Cookies.get("credential");
-  const userCookie = Cookies.get("user");
-  const user = userCookie ? JSON.parse(userCookie) : null;
-  const email = user?.email;
+
+  // console.log("CRED: ", jwt_decode(credentials));
+  const user = credential ? jwt_decode(credential) : null;
+  console.log(user?.email);
   const firstName = user?.name;
-  const lastName = user?.lastName;
-  const uses = user?.uses;
 
   console.log("THIS IS: " + credential);
   useEffect(() => {
-    if (!credential || !user) {
+    if (!credential) {
       navigate("/login");
     }
   }, []);
 
-  if (!user) {
-    return null; // Don't render the component
-  }
+  // if (!user) {
+  //   return null; // Don't render the component
+  // }
 
   // COOKIES USER ^
 
@@ -87,7 +87,9 @@ const FileUpload = () => {
     setJobTitle(tempJobTitle);
   };
   useEffect(() => {
-
+    if (!credential) {
+      navigate("/login");
+    }
   }, [jobTitle]);
 
   const onFileChange = (event) => {
@@ -121,7 +123,7 @@ const FileUpload = () => {
     const credential = Cookies.get("credential");
     setFileUploaded(true);
 
-    fetch("https://chapteroneai.com/api/upload", {
+    fetch("http://localhost:3000/api/upload", {
       method: "POST",
       headers: {
         Authorization: credential,
@@ -149,9 +151,12 @@ const FileUpload = () => {
       });
   };
 
-  useEffect(() => {
-    console.log(responseObject);
-  }, [responseObject]);
+  // useEffect(() => {
+  //   if (!credential) {
+  //     navigate("/login");
+  //   }
+  //   console.log(responseObject);
+  // }, [responseObject]);
 
   return (
     <div>
@@ -223,13 +228,6 @@ const FileUpload = () => {
                 }
                 sectionBoxText={"Overall, your resume received a rating of"}
               />
-              {/* 
-const sectionNumber = "1";
-const sectionTitle = "Let’s begin!";
-const sectionContent =
-  "Starting with the most important statistic, is the overall state of your current resume.";
-const sectionBoxText = "Overall, your resume received a rating of ";
- */}
               <div className="w-full bg-white pb-[104px] flex justify-center flex-col items-center">
                 <RatingSubHeading
                   rating={formatRating}

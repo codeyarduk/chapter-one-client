@@ -36,7 +36,7 @@ function LoginOauth() {
       .then((data) => {
         console.log("v");
         console.log(data);
-        Cookies.set("user", data, { expires: 7 });
+        // Cookies.set("user", data, { expires: 7 });
         setOutCome(data);
         navigate("/profile");
       })
