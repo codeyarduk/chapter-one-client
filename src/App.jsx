@@ -11,7 +11,9 @@ import CookieConsent from "./CookiesConsent.jsx";
 import CookiesPolicy from "./CookiesPolicy.jsx";
 import OldReview from "./OldReview.jsx";
 import { Helmet } from "react-helmet";
-
+import PrivacyPolicy from "./PrivacyPolicy.jsx";
+import TermsOfService from "./TermsOfService.jsx";
+import RefundPolicy from "./RefundPolicy.jsx";
 function App() {
   return (
     <>
@@ -39,6 +41,9 @@ function App() {
         <Route path="/packages" element={<Packages />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
         <Route path="/review" element={<OldReview />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
       </Routes>
       <CookieConsent />
     </>
