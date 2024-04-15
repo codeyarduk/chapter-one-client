@@ -13,16 +13,16 @@ function Footer() {
 
           <HashLink to="/#packages">Our packages</HashLink>
           <HashLink to="/#how-it-works">How it works</HashLink>
-          <a href="">Contact us</a>
+          <Link to="/profile">Profile</Link>
         </div>
 
         <div className="flex flex-col mt-14">
           <p className="text-lg font-extrabold mb-3 lg:text-base xl:text-lg">
             Legal
           </p>
-          <a href="">Terms and conditions</a>
-          <a href="">Privacy policy</a>
-          <a href="">Refund policy</a>
+          <Link to="/terms-of-service">Terms of Service</Link>
+          <Link to="/privacy-policy">Privacy policy</Link>
+          <Link to="/refund-policy">Refund policy</Link>
         </div>
 
         <div className="flex flex-col mt-14">
