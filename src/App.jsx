@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import FileUpload from "./FileUpload";
 import Home from "./Home";
 import "./App.css";
@@ -14,7 +14,14 @@ import { Helmet } from "react-helmet";
 import PrivacyPolicy from "./PrivacyPolicy.jsx";
 import TermsOfService from "./TermsOfService.jsx";
 import RefundPolicy from "./RefundPolicy.jsx";
+import { useEffect } from "react";
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
       <Helmet>
