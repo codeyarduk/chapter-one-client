@@ -7,7 +7,7 @@ function Package({ packageID, title, price, description }) {
   const [decoded, setDecoded] = useState(null);
 
   const navigate = useNavigate();
-  const credential = Cookies.get("user");
+  const credential = Cookies.get("credential");
 
   function stripeCallback(response) {
     console.log(response);
@@ -22,14 +22,14 @@ function Package({ packageID, title, price, description }) {
     }
 
     // http://localhost:3000/api/payments/webhook
-    fetch("https://chapteroneai.com/api/payments/create-checkout-session", {
+    fetch("http://localhost:3000/api/payments/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: credential,
       },
       body: JSON.stringify({
         item: { id: packageID, quantity: 1 },
-        token: credential,
       }),
     })
       .then((response) => {

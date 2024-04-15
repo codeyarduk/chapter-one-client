@@ -16,6 +16,7 @@ function RegisterOauth() {
   function handleCallback(response) {
     // console.log("Encoded JWT ID token: " + response.credential);
     let userObject = jwt_decode(response.credential);
+    const credential = response.credential;
     // console.log(userObject);
     sendEmail(response.credential);
     Cookies.set("credential", response.credential, { expires: 7 });
@@ -23,10 +24,11 @@ function RegisterOauth() {
   }
 
   const sendEmail = (userObject) => {
-    fetch("https://chapteroneai.com/api/users/register", {
+    fetch("http://localhost:3000/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: userObject,
       },
       body: JSON.stringify({
         user: userObject,
