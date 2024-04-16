@@ -17,7 +17,7 @@ function Home() {
             <img
               src="productOfDay8.svg"
               alt="Product of the day"
-              className="mt-12 h-[30px] lg:self-start"
+              className="mt-12 h-[36px] lg:self-start"
             />
             <div className="text-center text-6xl leading-[58px] font-extrabold pt-10 lg:text-[58px] lg:leading-[68px] lg:text-left lg:pt-6 xl:text-[72px] xl:leading-[86px]">
               <p>Perfect Your Resume.</p>
