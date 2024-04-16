@@ -61,24 +61,31 @@ function Package({ packageID, title, price, description }) {
       });
   };
   return (
-    <div className="mx-2 w-[336px] h-[400px] border-1.6 border-chapterOneBlue bg-chapterOneLightBlue flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-6 hidden lg:w-[432px] lg:h-[397px] lg:flex xl:hidden">
-      <p className="font-bold text-xl mt-16 lg:text-[22px] lg:mt-[75px]">
-        Standard
-      </p>
-      <p className="text-chapterOneBlue font-extrabold text-5xl mt-10 lg:text-[56px] lg:mt-4">
-        £1.00
-      </p>
-      <div className="flex justify-center">
-        <p className="text-chapterOneDarkBlue font-light text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-4">
-          One resfdgdfgfdume rerview
+    <div className="flex relative">
+      <div className="mx-2 w-[330px] h-[394px] border-[1px] border-chapterOneBlue bg-chapterOneLightBlue flex flex-col text-center z-50 items-center text-chapterOneDarkBlue rounded-xl mt-6 lg:w-[504px] lg:h-[439px] ">
+        <p className="font-extrabold text-lg mt-16 lg:text-[20px] lg:mt-[75px]">
+          Standard
         </p>
+        <p className="text-chapterOneBlue font-extrabold text-6xl mt-10 lg:text-[64px] lg:mt-4 ">
+          £1
+        </p>
+        <div className="flex justify-center">
+          <p className="text-chapterOneDarkBlue font-light text-sm max-w-72 mt-10 lg:text-[16px] lg:mt-4">
+            1 Resume Review
+          </p>
+        </div>
+        <button
+          onClick={loadStripe}
+          className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-chapterOneBlue self-center rounded-[10px] text-white  lg:text-base lg:w-[338px] lg:mt-10"
+        >
+          Buy now
+        </button>
       </div>
-      <button
-        onClick={loadStripe}
-        className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-chapterOneBlue self-center rounded-[10px] text-white  lg:text-base lg:w-[338px] lg:mt-10"
-      >
-        Buy now
-      </button>
+      <div
+        className="absolute mx-2 w-[330px] h-[394px] border-[1px] bg-chapterOneBlue flex flex-col text-chapterOneDarkBlue rounded-xl mt-6 lg:w-[504px] lg:h-[439px]
+                    translate-x-[-7px] translate-y-[7px]
+                            lg:translate-x-[-8px] lg:translate-y-[8px] "
+      ></div>
     </div>
   );
 }
