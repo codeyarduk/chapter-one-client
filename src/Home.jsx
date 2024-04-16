@@ -21,8 +21,8 @@ function Home() {
             />
             <div className="text-center text-6xl leading-[58px] font-extrabold pt-10 lg:text-[58px] lg:leading-[68px] lg:text-left lg:pt-6 xl:text-[72px] xl:leading-[86px]">
               <p>Perfect Your Resume.</p>
+              <p>Set yourself apart.</p>
               <p>Get the job.</p>
-              <p>Secure your future.</p>
             </div>
             <div className="text-center self-center mt-10 font-sora leading-[19.2px] max-w-[336px] lg:text-lg lg:leading-6 lg:text-left lg:self-start lg:max-w-[640px] xl:max-w-[752px]">
               <p>
