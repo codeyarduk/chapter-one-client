@@ -123,7 +123,7 @@ const FileUpload = () => {
     const credential = Cookies.get("credential");
     setFileUploaded(true);
 
-    fetch("http://localhost:3000/api/upload", {
+    fetch("https://chapteroneai.com/api/upload", {
       method: "POST",
       headers: {
         Authorization: credential,

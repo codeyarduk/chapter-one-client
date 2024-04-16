@@ -24,7 +24,7 @@ function RegisterOauth() {
   }
 
   const sendEmail = (userObject) => {
-    fetch("http://localhost:3000/api/users/register", {
+    fetch("https://chapteroneai.com/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
