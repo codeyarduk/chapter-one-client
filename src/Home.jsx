@@ -21,8 +21,8 @@ function Home() {
             />
             <div className="text-center text-6xl leading-[58px] font-extrabold pt-10 lg:text-[58px] lg:leading-[68px] lg:text-left lg:pt-6 xl:text-[72px] xl:leading-[86px]">
               <p>Perfect Your Resume.</p>
-              <p>Stand out in the crowd.</p>
-              <p>Get The Job.</p>
+              <p>Get the job.</p>
+              <p>Secure your future.</p>
             </div>
             <div className="text-center self-center mt-10 font-sora leading-[19.2px] max-w-[336px] lg:text-lg lg:leading-6 lg:text-left lg:self-start lg:max-w-[640px] xl:max-w-[752px]">
               <p>
@@ -105,7 +105,7 @@ function Home() {
           </a>
         </div>
       </div>
-      <div className="bg-chapterOneLightBlue relative flex flex-col items-center lg:h-[420px] lg:flex-row lg:justify-center">
+      <div className="bg-chapterOneLightBlue relative flex flex-col items-center lg:pt-8 lg:h-[452px] lg:flex-row lg:justify-center">
         <img
           src="review-showcase.png"
           alt="Review Showcase"
@@ -117,7 +117,7 @@ function Home() {
           className="w-[480px] absolute mt-16 hidden lg:flex bottom-0 transform translate-x-[270px] xl:w-[560px] xl:translate-x-[296px]"
         />
 
-        <div className="w-[336px] leading-5 mb-24 lg:w-[816px] lg:mb-0 xl:w-[1130px]">
+        <div className="w-[336px] leading-5 mb-24 lg:w-[816px] xl:pb-20 lg:mb-0 xl:w-[1130px]">
           <p className="font-bold text-2xl mt-8 lg:text-2xl lg:w-[416px]">
             What the review includes
           </p>
