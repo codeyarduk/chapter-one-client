@@ -17,7 +17,7 @@ function Profile() {
   const getUses = () => {
     // http://localhost:3000
     // https://chapteroneai.com
-    fetch("http://localhost:3000/api/users/uses/", {
+    fetch("https://chapteroneai.com/api/users/uses/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ function Profile() {
   };
 
   const getReviews = () => {
-    fetch("http://localhost:3000/api/reviews/", {
+    fetch("https://chapteroneai.com/api/reviews/", {
       method: "POST",
       headers: {
         Authorization: credential,
