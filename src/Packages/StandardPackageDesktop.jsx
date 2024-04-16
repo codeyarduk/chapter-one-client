@@ -61,7 +61,7 @@ function Package({ packageID, title, price, description }) {
       });
   };
   return (
-    <div className="mx-2 w-[336px] h-[422px] border-1.6 border-chapterOneBlue bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden xl:flex  xl:w-[572px] xl:h-[459px]">
+    <div className=" relative mx-2 w-[336px] h-[422px] border-1.6 border-chapterOneBlue bg-chapterOneLightBlue flex flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden xl:flex  xl:w-[504px] xl:h-[439px]">
       <p className="font-bold text-xl mt-[85px] lg:text-[22px] lg:mt-20 xl:text-2xl">
         Standard
       </p>
@@ -74,10 +74,11 @@ function Package({ packageID, title, price, description }) {
       </p>
       <button
         onClick={loadStripe}
-        className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-chapterOneBlue self-center rounded-[10px] text-white  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[304px]"
+        className="py-3 mb-24 mt-8 font-semibold text-sm w-72 text-center bg-chapterOneBlue self-center rounded-[10px] text-white  lg:text-base lg:w-[338px] lg:mt-10 xl:w-[440px]"
       >
         Buy now
       </button>
+      <div className=" relative mx-2 w-[336px] h-[422px] border-1.6 bg-chapterOneBlue  flex flex-col text-center items-center text-chapterOneDarkBlue rounded-xl mt-4 lg:w-[400px] lg:h-[474px] lg:hidden xl:flex  xl:w-[504px] xl:h-[439px]"></div>
     </div>
   );
 }

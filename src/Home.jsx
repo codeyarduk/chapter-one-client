@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./Footer";
 import Package from "./Packages/Package";
 import StandardPackageDesktop from "./Packages/StandardPackageDesktop";
-import StandardPackageTablet from "./Packages/StandardPackageTablet";
+import StandardPackage from "./Packages/StandardPackage";
 import { HashLink } from "react-router-hash-link";
 import Rating from "./Rating";
 import ProcessBlock from "./ProcessBlock";
@@ -145,8 +145,9 @@ function Home() {
         <p className="text-[32px] font-extrabold pt-28 max-w-[336px] lg:text-[40px]">
           How it works
         </p>
-        <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[600px]">
-          Watch our video to understand the process of how we work
+        <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[700px]">
+          Understand what an AI Review is in this short video from our lead
+          developer David
         </p>
         {/* <img
           src="temp_video.png"
@@ -187,28 +188,11 @@ function Home() {
           Pricing
         </p>
         <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[800px]">
-          One pound for one review
+          Get your resume reviewed now! For just one pound per review
         </p>
         <div className="flex flex-col lg:flex-row">
-          {/* Basic Package */}
-          {/* <Package
-            packageID={1}
-            title={"Basic"}
-            price={"4.95"}
-            description={"Receive 1 comprehensive resume review and analysis."}
-          /> */}
-          {/* Standard Package */}
-          <StandardPackageDesktop packageID={2} />
-          {/* Premium Package */}
-          {/* <Package
-            packageID={3}
-            title={"Premium"}
-            price={"19.95"}
-            description={"Receive 5 comprehensive resume reviews and analyses."}
-          /> */}
+          <StandardPackage />
         </div>
-        {/* Standard Package (Tablet View Only) */}
-        <StandardPackageTablet packageID={2} />
       </div>
       <div className=" bg-chapterOneLightBlue flex-col flex items-center py-20">
         <div className=" flex-col flex justify-center max-w-[336px] text-2xl lg:max-w-[800px] lg:py-16 xl:text-[32px] xl:max-w-[1100px]">
