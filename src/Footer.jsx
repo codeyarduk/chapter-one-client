@@ -1,5 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React from "react";
 import { HashLink } from "react-router-hash-link";
 
 function Footer() {
@@ -29,7 +29,9 @@ function Footer() {
           <p className="text-lg font-extrabold mb-3 lg:text-base xl:text-lg">
             Contact
           </p>
-          <a href="">support@chapteroneai.com</a>
+          <Link to="https://blog.chapteroneai.com/feedback410216">
+            Contact form
+          </Link>
         </div>
 
         <div className="flex flex-col mt-14">
