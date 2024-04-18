@@ -191,7 +191,7 @@ function Home() {
           Get your resume reviewed now! For just one pound per review
         </p>
         <div className="flex flex-col lg:flex-row">
-          <StandardPackage />
+          <StandardPackage packageID={2} />
         </div>
       </div>
       <div className=" bg-chapterOneLightBlue flex-col flex items-center py-20">
