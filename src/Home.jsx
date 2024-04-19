@@ -137,32 +137,92 @@ function Home() {
           </p>
         </div>
       </div>
-
-      <div
-        className="flex-col mb-20 flex justify-center items-center relative bg-white z-[20]"
-        id="how-it-works"
-      >
+      <div className="flex flex-col justify-center items-center">
         <p className="text-[32px] font-extrabold pt-28 max-w-[336px] lg:text-[40px]">
           How it works
         </p>
-        <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[700px]">
+        <p className="text-center mt-3 mb-7 lg:mb-3 px-8 text-sm leading-4 md:text-[15px] lg:max-w-[700px]">
           Understand what an AI Review is in this short video from our lead
           developer David
         </p>
-        {/* <img
-          src="temp_video.png"
-          alt=""
-          className="w-[336px] rounded-lg lg:w-[820px]"
-        /> */}
-        <iframe
-          className="w-full aspect-video xl:w-extraLarge border-0 rounded-lg"
-          src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+      </div>
+      <div
+        id="how-it-works"
+        className="relative flex justify-center mt-4 md:mt-8 lg-mt-16 px-7 md:px-16 lg:px-0 w-full lg:h-[490px] xl:h-[560px]"
+      >
+        <div className="absolute aspect-w-16  aspect-h-3  bg-white w-full top-[-220px] -z-40 h-[320px] lg:hidden"></div>
+        <div className="aspect-w-16 rounded-2xl aspect-h-9 w-full lg:w-[816px] lg:h-[450px] xl:w-[944px] xl:h-[520px]">
+          <iframe
+            className="aspect-content rounded-2xl lg:w-[816px] lg:h-[450px] xl:w-[944px] xl:h-[520px]"
+            src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      {/* <div className="relative hidden flex-col justify-center text-center lg:flex">
+        <HashLink
+          to="/#packages"
+          className="text-chapterOneBlue text-sm font-semibold block mt-6"
+        >
+          View Packages
+        </HashLink>
+
+        <HashLink
+          to="/#packages"
+          className="mb-24 text-center text-white justify-items-center hidden rounded-[10px] bg-chapterOneBlue py-[12px] w-[296px] lg:block lg:w-[368px]"
+        >
+          View Packages
+        </HashLink>
+        <div className="absolute bg-chapterOneLightBlue w-full top-0 h-96 -z-50 xl:h-[621px]"></div>
+      </div> */}
+      <div className="relative flex flex-col items-center justify-center text-center">
+        <HashLink
+          to="/#packages"
+          className="text-chapterOneBlue text-sm font-semibold block mt-6 md:hidden"
+        >
+          View Packages
+        </HashLink>
+
+        <HashLink
+          to="/#packages"
+          className="mb-24 mt-7 lg:mt-0 font-semibold text-center text-white justify-items-center hidden rounded-[12px] bg-chapterOneBlue py-[12px] w-[296px] md:block md:w-[368px]"
+        >
+          Get my review
+        </HashLink>
+        <div className="absolute bg-chapterOneLightBlue w-full h-[404px] top-[-304px] md:h-[740px] md:top-[-580px] -z-50 lg:top-[-400px] lg:h-[543px] xl:h-[621px] xl:top-[-450px]"></div>
+      </div>
+
+      {/* <div
+        className="aspect-w-16 aspect-h-12 flex-col mb-20 flex justify-center items-center relative bg-white z-[20] w-full"
+        id="how-it-works"
+      >
+        <div className="w-full flex flex-col items-center justify-center">
+          <p className="text-[32px] font-extrabold pt-28 max-w-[336px] lg:text-[40px]">
+            How it works
+          </p>
+          <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[700px]">
+            Understand what an AI Review is in this short video from our lead
+            developer David
+          </p>
+          <div className="aspect-w-16 relative aspect-h-9 border-0 w-full lg:h-[540px] lg:w-[960px]">
+            <iframe
+              className="lg:h-[540px] lg:w-[960px] rounded-xlg z-50"
+              src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center text-center">
+        {" "}
         <HashLink
           to="/#packages"
           className="text-chapterOneBlue text-sm font-semibold mt-6 lg:hidden"
@@ -171,17 +231,14 @@ function Home() {
         </HashLink>
         <HashLink
           to="/#packages"
-          className=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block lg:w-[368px]"
+          className=" mt-12 mb-24 text-center text-white justify-items-center hidden rounded-[10px] bg-chapterOneBlue py-[12px] w-[296px] lg:block lg:w-[368px]"
         >
           View Packages
         </HashLink>
-        <div className=" bg-chapterOneLightBlue absolute h-52 top-[356px] w-[100%] -z-10 lg:h-[545px]"></div>
-      </div>
-
+      </div> */}
       {/* OUR PACKAGES SECTION */}
-
       <div
-        className="flex-col mb-[160px] flex justify-center items-center relative "
+        className="flex-col mb-[160px] mt-16 lg:mt-0 flex justify-center items-center relative "
         id="packages"
       >
         <p className="text-[32px] font-extrabold pt-24 max-w-[336px] lg:text-[40px]">
