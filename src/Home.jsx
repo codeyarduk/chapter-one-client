@@ -155,7 +155,7 @@ function Home() {
           className="w-[336px] rounded-lg lg:w-[820px]"
         /> */}
         <iframe
-          className="w-[336px] h-[189px] lg:w-[820px] lg:h-[461px] border-0 rounded-lg"
+          className="w-full aspect-video xl:w-extraLarge border-0 rounded-lg"
           src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
           title="YouTube video player"
           frameborder="0"
