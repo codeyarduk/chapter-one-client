@@ -78,6 +78,32 @@ function PrivacyPolicy() {
           If you have any questions about this Privacy Policy, please contact us
           at support@chapteroneai.com.
         </p>
+        <p className="font-bold mb-4 mt-16">9. Google Analytics</p>
+        <p>
+          We use Google Analytics, a web analytics service provided by Google,
+          Inc. ("Google") to understand how our website is used and to improve
+          our service. Google Analytics collects information such as how often
+          users visit this site, what pages they visit when they do so, and what
+          other sites they used prior to coming to this site. Google's use of
+          the data it collects is subject to Google's Privacy Policy. We do not
+          combine the information collected through the use of Google Analytics
+          with personally identifiable information.
+        </p>
+        <br></br>
+        <p>
+          Google Analytics plants a permanent cookie on your web browser to
+          identify you as a unique user the next time you visit this site. This
+          cookie cannot be used by anyone but Google. You can prevent Google
+          Analytics from recognizing you on return visits to this site by
+          disabling cookies on your browser.
+        </p>
+        <br></br>
+        <p>
+          If you wish to opt-out of Google Analytics tracking, you can set up an
+          opt-out browser add-on which is available for most modern web
+          browsers. You can also manage your preferences for how Google uses
+          your data at Google's Ads Settings.
+        </p>
       </div>
       <Footer />
     </div>
