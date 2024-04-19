@@ -13,7 +13,7 @@ function Home() {
       {/* HERO SECTION */}
       <div className=" bg-chapterOneLightBlue flex-col flex items-center pt-20 justify-center">
         <div className="overflow-hidden relative w-full flex flex-col items-center lg:items-center">
-          <div className=" flex-col flex justify-center max-w-[377px] lg:pl-5 lg:max-w-[816px] lg:w-[100%] xl:max-w-[1180px]">
+          <div className=" flex-col flex justify-center px-7 lg:pl-5 lg:max-w-[816px] lg:w-[100%] xl:max-w-[1180px]">
             <img
               src="productOfDay8.svg"
               alt="Product of the day"
@@ -24,7 +24,7 @@ function Home() {
               <p>Set yourself apart.</p>
               <p>Get the job.</p>
             </div>
-            <div className="text-center self-center mt-10 font-sora leading-[19.2px] max-w-[336px] lg:text-lg lg:leading-6 lg:text-left lg:self-start lg:max-w-[640px] xl:max-w-[752px]">
+            <div className="text-center self-center mt-10 font-sora leading-[19.2px] max-w-[500px] mx-7 lg:mx-0 lg:text-lg lg:leading-6 lg:text-left lg:self-start lg:max-w-[640px] xl:max-w-[752px]">
               <p>
                 We provide{" "}
                 <span className="font-semibold">
@@ -59,7 +59,7 @@ function Home() {
           </p>
         </div>
         <div className="flex flex-col justify-between lg:mt-4 xl:flex-row xl:w-[1138px]">
-          <div className="flex flex-col justify-between lg:flex-row">
+          <div className="flex flex-col justify-between md:flex-row">
             {/* Purchase Step */}
             <ProcessBlock
               title="Purchase"
@@ -76,7 +76,7 @@ function Home() {
               content="Click ‘Start my review’ in your account dashboard."
             />
           </div>
-          <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col md:flex-row">
             {/* Upload Step */}
             <ProcessBlock
               title="Upload"
@@ -95,7 +95,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col mb-32 w-[336px] lg:w-[816px] xl:w-[1138px]">
+        <div className="flex flex-col mb-32 w-[336px] md:w-[686px] lg:w-[816px] xl:w-[1138px]">
           {" "}
           <a
             href=""
@@ -105,11 +105,11 @@ function Home() {
           </a>
         </div>
       </div>
-      <div className="bg-chapterOneLightBlue relative flex flex-col items-center lg:pt-8 lg:h-[452px] lg:flex-row lg:justify-center">
+      <div className="bg-chapterOneLightBlue relative flex flex-col-reverse items-center lg:pt-8 lg:h-[452px] lg:flex-row lg:justify-center">
         <img
           src="review-showcase.png"
           alt="Review Showcase"
-          className="w-[336px] mt-16 lg:hidden"
+          className="px-7 max-w-[748px] mb-12 sm:mb-16 md:mb-20 w-[100%] lg:hidden"
         />
         <img
           src="review-showcase-tablet.png"
@@ -117,7 +117,7 @@ function Home() {
           className="w-[480px] absolute mt-16 hidden lg:flex bottom-0 transform translate-x-[270px] xl:w-[560px] xl:translate-x-[296px]"
         />
 
-        <div className="w-[336px] leading-5 mb-24 lg:w-[816px] xl:pb-20 lg:mb-0 xl:w-[1130px]">
+        <div className=" leading-5 pt-8 pb-8 mb-8 mt-4 lg:mt-0 max-w-[692px] lg:max-w-[816px] lg:w-[816px] mx-7 lg:mx-7 xl:pb-20 lg:mb-0 xl:max-w-[1130px] xl:w-[1130px]">
           <p className="font-bold text-2xl mt-8 lg:text-2xl lg:w-[416px]">
             What the review includes
           </p>
@@ -137,32 +137,92 @@ function Home() {
           </p>
         </div>
       </div>
-
-      <div
-        className="flex-col mb-20 flex justify-center items-center relative bg-white z-[20]"
-        id="how-it-works"
-      >
+      <div className="flex flex-col justify-center items-center">
         <p className="text-[32px] font-extrabold pt-28 max-w-[336px] lg:text-[40px]">
           How it works
         </p>
-        <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[700px]">
+        <p className="text-center mt-3 mb-7 lg:mb-3 px-8 text-sm leading-4 md:text-[15px] lg:max-w-[700px]">
           Understand what an AI Review is in this short video from our lead
           developer David
         </p>
-        {/* <img
-          src="temp_video.png"
-          alt=""
-          className="w-[336px] rounded-lg lg:w-[820px]"
-        /> */}
-        <iframe
-          className="w-[336px] h-[189px] lg:w-[820px] lg:h-[461px] border-0 rounded-lg"
-          src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+      </div>
+      <div
+        id="how-it-works"
+        className="relative flex justify-center mt-4 md:mt-8 lg-mt-16 px-7 md:px-16 lg:px-0 w-full lg:h-[490px] xl:h-[560px]"
+      >
+        <div className="absolute aspect-w-16  aspect-h-3  bg-white w-full top-[-220px] -z-40 h-[320px] lg:hidden"></div>
+        <div className="aspect-w-16 rounded-2xl aspect-h-9 w-full lg:w-[816px] lg:h-[450px] xl:w-[944px] xl:h-[520px]">
+          <iframe
+            className="aspect-content rounded-2xl lg:w-[816px] lg:h-[450px] xl:w-[944px] xl:h-[520px]"
+            src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      {/* <div className="relative hidden flex-col justify-center text-center lg:flex">
+        <HashLink
+          to="/#packages"
+          className="text-chapterOneBlue text-sm font-semibold block mt-6"
+        >
+          View Packages
+        </HashLink>
+
+        <HashLink
+          to="/#packages"
+          className="mb-24 text-center text-white justify-items-center hidden rounded-[10px] bg-chapterOneBlue py-[12px] w-[296px] lg:block lg:w-[368px]"
+        >
+          View Packages
+        </HashLink>
+        <div className="absolute bg-chapterOneLightBlue w-full top-0 h-96 -z-50 xl:h-[621px]"></div>
+      </div> */}
+      <div className="relative flex flex-col items-center justify-center text-center">
+        <HashLink
+          to="/#packages"
+          className="text-chapterOneBlue text-sm font-semibold block mt-6 md:hidden"
+        >
+          View Packages
+        </HashLink>
+
+        <HashLink
+          to="/#packages"
+          className="mb-24 mt-7 lg:mt-0 font-semibold text-center text-white justify-items-center hidden rounded-[12px] bg-chapterOneBlue py-[12px] w-[296px] md:block md:w-[368px]"
+        >
+          Get my review
+        </HashLink>
+        <div className="absolute bg-chapterOneLightBlue w-full h-[404px] top-[-304px] md:h-[740px] md:top-[-580px] -z-50 lg:top-[-400px] lg:h-[543px] xl:h-[621px] xl:top-[-450px]"></div>
+      </div>
+
+      {/* <div
+        className="aspect-w-16 aspect-h-12 flex-col mb-20 flex justify-center items-center relative bg-white z-[20] w-full"
+        id="how-it-works"
+      >
+        <div className="w-full flex flex-col items-center justify-center">
+          <p className="text-[32px] font-extrabold pt-28 max-w-[336px] lg:text-[40px]">
+            How it works
+          </p>
+          <p className="text-center mt-3 mb-14 max-w-[336px] text-sm leading-4 lg:text-base lg:max-w-[700px]">
+            Understand what an AI Review is in this short video from our lead
+            developer David
+          </p>
+          <div className="aspect-w-16 relative aspect-h-9 border-0 w-full lg:h-[540px] lg:w-[960px]">
+            <iframe
+              className="lg:h-[540px] lg:w-[960px] rounded-xlg z-50"
+              src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center text-center">
+        {" "}
         <HashLink
           to="/#packages"
           className="text-chapterOneBlue text-sm font-semibold mt-6 lg:hidden"
@@ -171,17 +231,14 @@ function Home() {
         </HashLink>
         <HashLink
           to="/#packages"
-          className=" mt-12 mb-24  text-center text-white  hidden rounded-[10px] mr-5 bg-chapterOneBlue self-center py-[12px] w-[296px] lg:block lg:w-[368px]"
+          className=" mt-12 mb-24 text-center text-white justify-items-center hidden rounded-[10px] bg-chapterOneBlue py-[12px] w-[296px] lg:block lg:w-[368px]"
         >
           View Packages
         </HashLink>
-        <div className=" bg-chapterOneLightBlue absolute h-52 top-[356px] w-[100%] -z-10 lg:h-[545px]"></div>
-      </div>
-
+      </div> */}
       {/* OUR PACKAGES SECTION */}
-
       <div
-        className="flex-col mb-[160px] flex justify-center items-center relative "
+        className="flex-col mb-[160px] mt-16 lg:mt-0 flex justify-center items-center relative "
         id="packages"
       >
         <p className="text-[32px] font-extrabold pt-24 max-w-[336px] lg:text-[40px]">
@@ -195,31 +252,12 @@ function Home() {
         </div>
       </div>
       <div className=" bg-chapterOneLightBlue flex-col flex items-center py-20">
-        <div className=" flex-col flex justify-center max-w-[336px] text-2xl lg:max-w-[800px] lg:py-16 xl:text-[32px] xl:max-w-[1100px]">
-          <p className="font-bold lg:hidden">
+        <div className="px-7 flex-col flex justify-center text-2xl lg:max-w-[800px] lg:py-16 xl:text-[32px] xl:max-w-[1100px]">
+          <p className="font-bold">
             At Chapter <span className="text-chapterOneBlue">One</span> we
             prioritise your safety and privacy. Therefore all of your uploaded
             files get deleted after use.
           </p>
-          <div className="hidden lg:flex lg:flex-col w-[816px] xl:w-[1136px]">
-            <p className=" font-extrabold text-[32px]  ">Data Privacy</p>
-            <p className="text-sm  mt-8">
-              We don’t collect any user data besides the payment information
-              which we store in stripe for legal reasons and First Name, Last
-              Name, and User Email, which we do not provide to any third parties
-              and we delete all data a year after your most recent review.{" "}
-            </p>
-            <p className="text-sm mt-3">
-              Resumes are deleted after uploading and OpenAI doesn’t use the
-              data we send to them for training purposes. Here is a link to the
-              commitments OpenAI gave regarding the data we upload to them.
-              https://openai.com/enterprise-privacy
-            </p>
-            <p className="text-sm  mt-3">
-              Additionally we will not train or use your data for any AI Fine
-              Tuning, or anything other than legal obligations.
-            </p>
-          </div>
         </div>
       </div>
       {/* FOOTER SECTION */}

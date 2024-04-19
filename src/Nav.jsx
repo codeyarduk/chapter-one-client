@@ -92,7 +92,7 @@ function Nav() {
           </div>
         </div>
       )}
-      <div className="w-full font-sora flex flex-row justify-between items-center absolute py-6 px-5 max-w-[377px] lg:max-w-[812px] xl:max-w-[1180px]">
+      <div className="w-full font-sora flex flex-row justify-between items-center absolute py-6 px-5 max-w-[570px] lg:max-w-[812px] xl:max-w-[1180px]">
         <div
           className="z-50 hover:cursor-pointer"
           onClick={() => navigate("/")}
