@@ -154,7 +154,6 @@ function Home() {
           alt=""
           className="w-[336px] rounded-lg lg:w-[820px]"
         /> */}
-
         <iframe
           className="w-full aspect-video xl:w-extraLarge border-0 rounded-lg"
           src="https://www.youtube.com/embed/kRo3RhIZU4w?si=sgzIXPi3k5MFyHj0"
@@ -164,7 +163,6 @@ function Home() {
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
-
         <HashLink
           to="/#packages"
           className="text-chapterOneBlue text-sm font-semibold mt-6 lg:hidden"
