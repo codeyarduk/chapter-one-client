@@ -15,12 +15,19 @@ import PrivacyPolicy from "./PrivacyPolicy.jsx";
 import TermsOfService from "./TermsOfService.jsx";
 import RefundPolicy from "./RefundPolicy.jsx";
 import { useEffect } from "react";
+import ReactGA from "react-ga"; // Google Analytics
+
 function App() {
   const location = useLocation();
 
   useEffect(() => {
+    ReactGA.initialize("G-N6H1SZPZ01");
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location.pathname, location.search]);
 
   return (
     <>
