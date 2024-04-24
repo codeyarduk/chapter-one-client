@@ -20,7 +20,7 @@ function Package({ packageID, title, price, description }) {
       navigate("/login", { state: { to: "/" } });
       return null;
     }
-
+    // Strage?
     // http://localhost:3000/api/payments/webhook
     fetch("https://chapteroneai.com/api/payments/create-checkout-session", {
       method: "POST",
